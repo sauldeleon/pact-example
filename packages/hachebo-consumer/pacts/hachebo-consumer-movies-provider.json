@@ -1,0 +1,104 @@
+{
+  "consumer": {
+    "name": "hachebo-consumer"
+  },
+  "provider": {
+    "name": "movies-provider"
+  },
+  "interactions": [
+    {
+      "description": "a GET request for a movie",
+      "providerState": "a movie exists",
+      "request": {
+        "method": "GET",
+        "path": "/movies/42",
+        "headers": {
+          "Accept": "application/json; charset=utf-8"
+        },
+        "matchingRules": {
+          "$.headers.Accept": {
+            "match": "regex",
+            "regex": "application\\/json; *charset=utf-8"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8"
+        },
+        "body": {
+          "id": 42,
+          "name": "The Silence of the Lambs",
+          "genre": "Jonathan Demme",
+          "director": "Terror",
+          "year": 1991
+        },
+        "matchingRules": {
+          "$.headers.Content-Type": {
+            "match": "regex",
+            "regex": "application\\/json; *charset=utf-8"
+          },
+          "$.body": {
+            "match": "type"
+          }
+        }
+      }
+    },
+    {
+      "description": "a POST request to create a movie",
+      "providerState": "provider allows movie creation",
+      "request": {
+        "method": "POST",
+        "path": "/movies",
+        "headers": {
+          "Accept": "application/json; charset=utf-8",
+          "Content-Type": "application/json; charset=utf-8"
+        },
+        "body": {
+          "name": "The Silence of the Lambs",
+          "genre": "Jonathan Demme",
+          "director": "Terror",
+          "year": 1991
+        },
+        "matchingRules": {
+          "$.headers.Accept": {
+            "match": "regex",
+            "regex": "application\\/json; *charset=utf-8"
+          },
+          "$.headers.Content-Type": {
+            "match": "regex",
+            "regex": "application\\/json; *charset=utf-8"
+          }
+        }
+      },
+      "response": {
+        "status": 201,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8"
+        },
+        "body": {
+          "id": 42,
+          "name": "The Silence of the Lambs",
+          "genre": "Jonathan Demme",
+          "director": "Terror",
+          "year": 1991
+        },
+        "matchingRules": {
+          "$.headers.Content-Type": {
+            "match": "regex",
+            "regex": "application\\/json; *charset=utf-8"
+          },
+          "$.body": {
+            "match": "type"
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}

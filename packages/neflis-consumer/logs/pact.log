@@ -1,0 +1,215 @@
+I, [2021-04-22T08:11:04.173936 #34041]  INFO -- : Registered expected interaction GET /movies/42
+D, [2021-04-22T08:11:04.174159 #34041] DEBUG -- : {
+  "description": "a GET request for a movie",
+  "providerState": "a movie exists",
+  "request": {
+    "method": "GET",
+    "path": "/movies/42",
+    "headers": {
+      "Accept": {
+        "json_class": "Pact::Term",
+        "data": {
+          "generate": "application/json; charset=utf-8",
+          "matcher": {
+            "json_class": "Regexp",
+            "o": 0,
+            "s": "application\\/json; *charset=utf-8"
+          }
+        }
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": {
+        "json_class": "Pact::Term",
+        "data": {
+          "generate": "application/json; charset=utf-8",
+          "matcher": {
+            "json_class": "Regexp",
+            "o": 0,
+            "s": "application\\/json; *charset=utf-8"
+          }
+        }
+      }
+    },
+    "body": {
+      "json_class": "Pact::SomethingLike",
+      "contents": {
+        "id": 42,
+        "name": "The Silence of the Lambs",
+        "genre": "Jonathan Demme",
+        "director": "Terror"
+      }
+    }
+  },
+  "metadata": null
+}
+I, [2021-04-22T08:11:04.193099 #34041]  INFO -- : Received request GET /movies/42
+D, [2021-04-22T08:11:04.193229 #34041] DEBUG -- : {
+  "path": "/movies/42",
+  "query": "",
+  "method": "get",
+  "headers": {
+    "Accept": "application/json; charset=utf-8",
+    "Referer": "http://localhost/",
+    "User-Agent": "Mozilla/5.0 (darwin) AppleWebKit/537.36 (KHTML, like Gecko) jsdom/16.4.0",
+    "Accept-Language": "en",
+    "Origin": "http://localhost",
+    "Host": "localhost:1234",
+    "Accept-Encoding": "gzip, deflate",
+    "Connection": "keep-alive",
+    "Version": "HTTP/1.1"
+  }
+}
+I, [2021-04-22T08:11:04.193534 #34041]  INFO -- : Found matching response for GET /movies/42
+D, [2021-04-22T08:11:04.193656 #34041] DEBUG -- : {
+  "status": 200,
+  "headers": {
+    "Content-Type": {
+      "json_class": "Pact::Term",
+      "data": {
+        "generate": "application/json; charset=utf-8",
+        "matcher": {
+          "json_class": "Regexp",
+          "o": 0,
+          "s": "application\\/json; *charset=utf-8"
+        }
+      }
+    }
+  },
+  "body": {
+    "json_class": "Pact::SomethingLike",
+    "contents": {
+      "id": 42,
+      "name": "The Silence of the Lambs",
+      "genre": "Jonathan Demme",
+      "director": "Terror"
+    }
+  }
+}
+I, [2021-04-22T08:11:04.208778 #34041]  INFO -- : Verifying - interactions matched
+I, [2021-04-22T08:11:04.214755 #34041]  INFO -- : Cleared interactions
+I, [2021-04-22T08:11:04.220061 #34041]  INFO -- : Registered expected interaction POST /movies
+D, [2021-04-22T08:11:04.220204 #34041] DEBUG -- : {
+  "description": "a POST request to create a movie",
+  "providerState": "provider allows movie creation",
+  "request": {
+    "method": "POST",
+    "path": "/movies",
+    "headers": {
+      "Accept": {
+        "json_class": "Pact::Term",
+        "data": {
+          "generate": "application/json; charset=utf-8",
+          "matcher": {
+            "json_class": "Regexp",
+            "o": 0,
+            "s": "application\\/json; *charset=utf-8"
+          }
+        }
+      },
+      "Content-Type": {
+        "json_class": "Pact::Term",
+        "data": {
+          "generate": "application/json; charset=utf-8",
+          "matcher": {
+            "json_class": "Regexp",
+            "o": 0,
+            "s": "application\\/json; *charset=utf-8"
+          }
+        }
+      }
+    },
+    "body": {
+      "name": "The Silence of the Lambs",
+      "genre": "Jonathan Demme",
+      "director": "Terror"
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": {
+        "json_class": "Pact::Term",
+        "data": {
+          "generate": "application/json; charset=utf-8",
+          "matcher": {
+            "json_class": "Regexp",
+            "o": 0,
+            "s": "application\\/json; *charset=utf-8"
+          }
+        }
+      }
+    },
+    "body": {
+      "json_class": "Pact::SomethingLike",
+      "contents": {
+        "id": 42,
+        "name": "The Silence of the Lambs",
+        "genre": "Jonathan Demme",
+        "director": "Terror"
+      }
+    }
+  },
+  "metadata": null
+}
+I, [2021-04-22T08:11:04.227908 #34041]  INFO -- : Received request POST /movies
+D, [2021-04-22T08:11:04.228000 #34041] DEBUG -- : {
+  "path": "/movies",
+  "query": "",
+  "method": "post",
+  "body": {
+    "name": "The Silence of the Lambs",
+    "genre": "Jonathan Demme",
+    "director": "Terror"
+  },
+  "headers": {
+    "Content-Length": "80",
+    "Content-Type": "application/json; charset=utf-8",
+    "Accept": "application/json; charset=utf-8",
+    "Referer": "http://localhost/",
+    "User-Agent": "Mozilla/5.0 (darwin) AppleWebKit/537.36 (KHTML, like Gecko) jsdom/16.4.0",
+    "Accept-Language": "en",
+    "Origin": "http://localhost",
+    "Host": "localhost:1234",
+    "Accept-Encoding": "gzip, deflate",
+    "Connection": "keep-alive",
+    "Version": "HTTP/1.1"
+  }
+}
+I, [2021-04-22T08:11:04.228195 #34041]  INFO -- : Found matching response for POST /movies
+D, [2021-04-22T08:11:04.228278 #34041] DEBUG -- : {
+  "status": 201,
+  "headers": {
+    "Content-Type": {
+      "json_class": "Pact::Term",
+      "data": {
+        "generate": "application/json; charset=utf-8",
+        "matcher": {
+          "json_class": "Regexp",
+          "o": 0,
+          "s": "application\\/json; *charset=utf-8"
+        }
+      }
+    }
+  },
+  "body": {
+    "json_class": "Pact::SomethingLike",
+    "contents": {
+      "id": 42,
+      "name": "The Silence of the Lambs",
+      "genre": "Jonathan Demme",
+      "director": "Terror"
+    }
+  }
+}
+I, [2021-04-22T08:11:04.232253 #34041]  INFO -- : Verifying - interactions matched
+I, [2021-04-22T08:11:04.235454 #34041]  INFO -- : Cleared interactions
+I, [2021-04-22T08:11:04.239078 #34041]  INFO -- : Updating pact for movies-provider at /Users/sauldeleonguerrero/Documents/dev/pact/neflis-consumer/pacts/neflis-consumer-movies-provider.json
+I, [2021-04-22T08:11:04.239990 #34041]  INFO -- : *****************************************************************************
+I, [2021-04-22T08:11:04.240079 #34041]  INFO -- : Updating existing file ./Users/sauldeleonguerrero/Documents/dev/pact/neflis-consumer/pacts/neflis-consumer-movies-provider.json as pactfile_write_mode is :update
+I, [2021-04-22T08:11:04.240107 #34041]  INFO -- : Only interactions defined in this test run will be updated.
+I, [2021-04-22T08:11:04.240133 #34041]  INFO -- : As interactions are identified by description and provider state, pleased note that if either of these have changed, the old interactions won't be removed from the pact file until the specs are next run with :pactfile_write_mode => :overwrite.
+I, [2021-04-22T08:11:04.240154 #34041]  INFO -- : *****************************************************************************
