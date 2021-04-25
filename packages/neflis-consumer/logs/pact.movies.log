@@ -1,5 +1,5 @@
-I, [2021-04-25T01:08:46.701521 #86397]  INFO -- : Registered expected interaction GET /movies/42
-D, [2021-04-25T01:08:46.701852 #86397] DEBUG -- : {
+I, [2021-04-25T19:11:16.168166 #93768]  INFO -- : Registered expected interaction GET /movies/42
+D, [2021-04-25T19:11:16.168388 #93768] DEBUG -- : {
   "description": "a GET request for a movie",
   "providerState": "a movie exists",
   "request": {
@@ -46,8 +46,8 @@ D, [2021-04-25T01:08:46.701852 #86397] DEBUG -- : {
   },
   "metadata": null
 }
-I, [2021-04-25T01:08:46.711452 #86397]  INFO -- : Received request GET /movies/42
-D, [2021-04-25T01:08:46.711594 #86397] DEBUG -- : {
+I, [2021-04-25T19:11:16.176381 #93768]  INFO -- : Received request GET /movies/42
+D, [2021-04-25T19:11:16.176509 #93768] DEBUG -- : {
   "path": "/movies/42",
   "query": "",
   "method": "get",
@@ -63,8 +63,8 @@ D, [2021-04-25T01:08:46.711594 #86397] DEBUG -- : {
     "Version": "HTTP/1.1"
   }
 }
-I, [2021-04-25T01:08:46.711894 #86397]  INFO -- : Found matching response for GET /movies/42
-D, [2021-04-25T01:08:46.712026 #86397] DEBUG -- : {
+I, [2021-04-25T19:11:16.176796 #93768]  INFO -- : Found matching response for GET /movies/42
+D, [2021-04-25T19:11:16.176905 #93768] DEBUG -- : {
   "status": 200,
   "headers": {
     "Content-Type": {
@@ -89,10 +89,10 @@ D, [2021-04-25T01:08:46.712026 #86397] DEBUG -- : {
     }
   }
 }
-I, [2021-04-25T01:08:46.716878 #86397]  INFO -- : Verifying - interactions matched
-I, [2021-04-25T01:08:46.720094 #86397]  INFO -- : Cleared interactions
-I, [2021-04-25T01:08:46.724295 #86397]  INFO -- : Registered expected interaction POST /movies
-D, [2021-04-25T01:08:46.724432 #86397] DEBUG -- : {
+I, [2021-04-25T19:11:16.181356 #93768]  INFO -- : Verifying - interactions matched
+I, [2021-04-25T19:11:16.184521 #93768]  INFO -- : Cleared interactions
+I, [2021-04-25T19:11:16.189374 #93768]  INFO -- : Registered expected interaction POST /movies
+D, [2021-04-25T19:11:16.189645 #93768] DEBUG -- : {
   "description": "a POST request to create a movie",
   "providerState": "provider allows movie creation",
   "request": {
@@ -155,8 +155,8 @@ D, [2021-04-25T01:08:46.724432 #86397] DEBUG -- : {
   },
   "metadata": null
 }
-I, [2021-04-25T01:08:46.730311 #86397]  INFO -- : Received request POST /movies
-D, [2021-04-25T01:08:46.730436 #86397] DEBUG -- : {
+I, [2021-04-25T19:11:16.199082 #93768]  INFO -- : Received request POST /movies
+D, [2021-04-25T19:11:16.199191 #93768] DEBUG -- : {
   "path": "/movies",
   "query": "",
   "method": "post",
@@ -179,8 +179,8 @@ D, [2021-04-25T01:08:46.730436 #86397] DEBUG -- : {
     "Version": "HTTP/1.1"
   }
 }
-I, [2021-04-25T01:08:46.730631 #86397]  INFO -- : Found matching response for POST /movies
-D, [2021-04-25T01:08:46.730732 #86397] DEBUG -- : {
+I, [2021-04-25T19:11:16.199499 #93768]  INFO -- : Found matching response for POST /movies
+D, [2021-04-25T19:11:16.199620 #93768] DEBUG -- : {
   "status": 201,
   "headers": {
     "Content-Type": {
@@ -205,11 +205,6 @@ D, [2021-04-25T01:08:46.730732 #86397] DEBUG -- : {
     }
   }
 }
-I, [2021-04-25T01:08:46.739352 #86397]  INFO -- : Verifying - interactions matched
-I, [2021-04-25T01:08:46.742497 #86397]  INFO -- : Cleared interactions
-I, [2021-04-25T01:08:46.747420 #86397]  INFO -- : Updating pact for movies-provider at /Users/sauldeleonguerrero/Documents/dev/pact/packages/neflis-consumer/pacts/neflis-consumer-movies-provider.json
-I, [2021-04-25T01:08:46.748926 #86397]  INFO -- : *****************************************************************************
-I, [2021-04-25T01:08:46.749058 #86397]  INFO -- : Updating existing file ./Users/sauldeleonguerrero/Documents/dev/pact/packages/neflis-consumer/pacts/neflis-consumer-movies-provider.json as pactfile_write_mode is :update
-I, [2021-04-25T01:08:46.749099 #86397]  INFO -- : Only interactions defined in this test run will be updated.
-I, [2021-04-25T01:08:46.749130 #86397]  INFO -- : As interactions are identified by description and provider state, pleased note that if either of these have changed, the old interactions won't be removed from the pact file until the specs are next run with :pactfile_write_mode => :overwrite.
-I, [2021-04-25T01:08:46.749194 #86397]  INFO -- : *****************************************************************************
+I, [2021-04-25T19:11:16.211599 #93768]  INFO -- : Verifying - interactions matched
+I, [2021-04-25T19:11:16.215525 #93768]  INFO -- : Cleared interactions
+I, [2021-04-25T19:11:16.220616 #93768]  INFO -- : Updating pact for movies-provider at /Users/sauldeleonguerrero/Documents/dev/pact/packages/neflis-consumer/pacts/neflis-consumer-movies-provider.json
