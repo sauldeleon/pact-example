@@ -21,6 +21,8 @@ database.env
 broker.env
 postgres-data
 packages/pact-broker/ssl/cert
+.env
+packages/*/pacts/*
 
 npm-debug.log*
 yarn-debug.log*
