@@ -5,14 +5,11 @@
 /.pnp
 .pnp.js
 
-# testing
-/coverage
-
 # production
 /build
+/dist
 
 # misc
-logs/*
 .DS_Store
 .env.local
 .env.development.local
@@ -20,10 +17,11 @@ logs/*
 .env.production.local
 database.env
 broker.env
-postgres-data
-packages/pact-broker/ssl/cert
+pact-broker/postgres-data
+pact-broker/ssl/cert
 .env
-packages/*/pacts
+javascript/packages/*/pacts
+javascript/packages/*/logs/*
 
 npm-debug.log*
 yarn-debug.log*
