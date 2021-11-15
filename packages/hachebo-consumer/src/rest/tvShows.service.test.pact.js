@@ -31,7 +31,7 @@ describe('TvShowService API', () => {
               'Content-Type': contentTypeJsonMatcher,
             },
             body: Pact.Matchers.somethingLike(
-              new TvShow('Friends', 'Humor', 'David Crane, Marta Kauffman', 10, 1994, 42),
+              new TvShow('Friends', 'David Crane, Marta Kauffman', 'Humor', 10, 1994, 42),
             ),
           },
         })
