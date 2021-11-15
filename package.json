@@ -2,12 +2,13 @@
   "name": "pact-example",
   "private": true,
   "devDependencies": {
-    "lerna": "^4.0.0"
+    "lerna": "4.0.0"
   },
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
+    "lerna": "lerna",
     "bootstrap": "lerna bootstrap",
     "pact:hachebo": "yarn workspace hachebo-consumer test:pact:ci && yarn workspace hachebo-consumer publish:pact",
     "pact:neflis": "yarn workspace neflis-consumer test:pact:ci && yarn workspace neflis-consumer publish:pact",
