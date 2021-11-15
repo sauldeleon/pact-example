@@ -1,5 +1,11 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# environments
+/python/venv/
+
+# IDEs
+.idea/
+
 # dependencies
 *node_modules*
 /.pnp
@@ -22,6 +28,7 @@ pact-broker/ssl/cert
 .env
 javascript/packages/*/pacts
 javascript/packages/*/logs/*
+python/__pycache__/
 
 npm-debug.log*
 yarn-debug.log*
