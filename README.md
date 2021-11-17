@@ -34,7 +34,7 @@
 
 ```python
 cd pact-example/python
-Docker-compose up
+docker-compose up -d
 ```
 
 And go to `http://localhost:9000/`
