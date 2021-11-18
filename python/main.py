@@ -3,6 +3,6 @@ from fastapi import FastAPI
 app = FastAPI()
 
 
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
+@app.get("/duration/{media_id}")
+async def duration(media_id: int):
+    return {"id": media_id, "duration_min": 192}
