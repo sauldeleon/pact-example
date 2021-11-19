@@ -32,12 +32,22 @@
 
 ## Installation of Python example
 
+### Set up
 ```python
 cd pact-example/python
 python3 -m venv venv
 source ./venv/bin/activate
 pip install -r requirements.txt
+
+### Start
+```python
+cd duration_provider
 uvicorn main:app --reload --port 9000
+```
+
+```python
+cd movies_provider
+uvicorn main:app --reload --port 9001
 ```
 
 ## Running Pact tests in Python side
