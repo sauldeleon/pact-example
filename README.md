@@ -33,23 +33,50 @@
 ## Installation of Python example
 
 ### Set up
-```python
+```bash
 cd pact-example/python
 python3 -m venv venv
 source ./venv/bin/activate
-pip install -r requirements.txt
+pip install .
+```
 
-### Start
-```python
+### Start local apps
+```bash
 cd duration_provider
 uvicorn main:app --reload --port 9000
 ```
 
-```python
+```bash
 cd movies_provider
 uvicorn main:app --reload --port 9001
 ```
 
-## Running Pact tests in Python side
+### Generate pacts (with mocks)
 
-TODO
+- Pact-python
+  ```bash
+  cd pacts/pact-python
+  python -m unittest create_pact_mocked.GetDurationContract.test_get_duration
+  ```
+
+- Pactman
+  ```bash
+  cd pacts/pactman
+  python -m unittest create_pact_mocked.GetDurationContract.test_get_duration
+  ```
+
+### Generate pacts (no mocks)
+
+First, start the local apps, then
+
+- Pact-python
+  ```bash
+  cd pacts/pact-python
+  python -m unittest create_pact_live.GetDurationContract.test_get_duration
+  ```
+
+- Pactman
+  ```bash
+  cd pacts/pactman
+  python -m unittest create_pact_live.GetDurationContract.test_get_duration
+  ```

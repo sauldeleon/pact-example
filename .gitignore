@@ -12,9 +12,15 @@
 .pnp.js
 
 # production
-/build
-/dist
+build/
+dist/
 __pycache__/
+.pytest_cache/
+eggs/
+.eggs/
+*.egg-info/
+*.egg
+*.log
 
 # misc
 .DS_Store
@@ -29,7 +35,6 @@ pact-broker/ssl/cert
 .env
 javascript/packages/*/pacts
 javascript/packages/*/logs/*
-python/__pycache__/
 
 npm-debug.log*
 yarn-debug.log*
