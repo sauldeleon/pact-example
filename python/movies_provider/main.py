@@ -13,12 +13,15 @@ DURATION_PROVIDER_ENDPOINT = 'http://localhost:9000/duration'
 app = FastAPI()
 
 
+def get_duration(movie_id):
+    response = requests.get(f"{DURATION_PROVIDER_ENDPOINT}/{movie_id}")
+    return response.json()
+
+
 @app.get("/movies/{movie_id}")
 async def movie(movie_id: int):
-    response = requests.get(f"{DURATION_PROVIDER_ENDPOINT}/{movie_id}")
-    r_json = response.json()
-
-    duration_min = r_json['duration_min']
+    response = get_duration(movie_id)
+    duration_min = response['duration_min']
 
     JSON_RESULT['duration_min'] = duration_min
 

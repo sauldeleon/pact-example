@@ -1,3 +1,6 @@
 fastapi==0.70.0
 uvicorn==0.15.0
 requests==2.26.0
+pactman==2.30.0
+pact-python==1.4.5
+httpretty==1.1.4
