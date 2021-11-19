@@ -1,15 +1,21 @@
 const express = require('express')
+const fetch = require('node-fetch')
 const router = express.Router()
+
 
 router.route('/:movie_id').get(function (req, res) {
   const movieId = parseInt(req.params['movie_id'])
-  res.status(200)
-  res.json({
-    id: movieId,
-    name: 'The Silence of the Lambs',
-    genre: 'Terror',
-    director: 'Jonathan Demme',
-    year: 1991,
+  fetch(`http://localhost:9000/duration/${movieId}`).then((resp)=>{return resp.json()}).then((resp)=>{
+    console.log(resp)
+    res.status(200)
+    res.json({
+      id: movieId,
+      name: 'The Silence of the Lambs',
+      genre: 'Terror',
+      director: 'Jonathan Demme',
+      year: 1991,
+      duration: resp.duration_min,
+    })
   })
 })
 
