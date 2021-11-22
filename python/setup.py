@@ -18,7 +18,7 @@ setup(
     classifiers=[
         "Intended Audience :: Developers",
         "Natural Language :: English",
-        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
     ],
     description="Python package for pacts",
     install_requires=list_requirements(),
