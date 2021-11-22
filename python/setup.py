@@ -14,11 +14,11 @@ def list_requirements():
 
 setup(
     name="pact-example",
-    python_requires=">=3.9",
+    python_requires=">=3.8",
     classifiers=[
         "Intended Audience :: Developers",
         "Natural Language :: English",
-        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.8",
     ],
     description="Python package for pacts",
     install_requires=list_requirements(),
