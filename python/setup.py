@@ -14,7 +14,7 @@ def list_requirements():
 
 setup(
     name="pact-example",
-    python_requires=">=3.8",
+    python_requires=">=3.9",
     classifiers=[
         "Intended Audience :: Developers",
         "Natural Language :: English",
