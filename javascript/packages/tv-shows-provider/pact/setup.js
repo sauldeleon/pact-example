@@ -12,5 +12,5 @@ global.durationProvider = new Pact({
   pactfileWriteMode: 'update',
   consumer: 'tv-shows-provider',
   provider: 'duration-provider',
-  host: '127.0.0.1',
+  host: 'localhost',
 })

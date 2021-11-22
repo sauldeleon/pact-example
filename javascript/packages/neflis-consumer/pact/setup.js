@@ -14,7 +14,7 @@ global.moviesProvider = new Pact({
   pactfileWriteMode: 'update',
   consumer: 'neflis-consumer',
   provider: 'movies-provider',
-  host: '127.0.0.1',
+  host: 'localhost',
 })
 
 global.tvShowsProvider = new Pact({
@@ -27,5 +27,5 @@ global.tvShowsProvider = new Pact({
   pactfileWriteMode: 'update',
   consumer: 'neflis-consumer',
   provider: 'tv-shows-provider',
-  host: '127.0.0.1',
+  host: 'localhost',
 })
