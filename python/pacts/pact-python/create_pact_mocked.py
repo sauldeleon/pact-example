@@ -3,7 +3,7 @@ import unittest
 import httpretty
 
 from pact import Consumer, Provider
-from movies_provider.main import get_duration
+from movies_api.main import get_duration
 
 pact = Consumer('movies-provider').has_pact_with(
     Provider('duration-provider'),
