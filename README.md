@@ -48,7 +48,7 @@ uvicorn main:app --reload --port 9000
 ```
 
 ```bash
-cd movies_provider
+cd movies_api
 uvicorn main:app --reload --port 9001
 ```
 
