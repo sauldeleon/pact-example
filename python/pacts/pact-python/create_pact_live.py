@@ -4,7 +4,7 @@ import unittest
 from pact import Consumer, Provider
 from movies_api.main import get_duration
 
-pact = Consumer('movies-provider').has_pact_with(
+pact = Consumer('movies-api').has_pact_with(
     Provider('duration-provider'),
     port=9000,
     log_dir='./',
@@ -24,7 +24,7 @@ class GetDurationContract(unittest.TestCase):
 
         (pact
          .given('Given a movie exists')
-         .upon_receiving('a request for movies-provider')
+         .upon_receiving('a request for movies-api')
          .with_request('GET', '/duration/42')
          .will_respond_with(200, body=expected))
 
