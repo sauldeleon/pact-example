@@ -1,6 +1,5 @@
 import atexit
 import unittest
-import httpretty
 
 from pact import Consumer, Provider
 from movies_api.main import get_duration
@@ -22,11 +21,6 @@ class GetDurationContract(unittest.TestCase):
             "id": 42,
             "duration_min": 192,
         }
-        httpretty.register_uri(
-            httpretty.GET,
-            "http://localhost:9000/duration/42",
-            body=expected
-        )
 
         (pact
          .given('Given a movie exists')
