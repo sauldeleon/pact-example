@@ -6,7 +6,6 @@ from movies_api.main import get_duration
 pact = Consumer('movies-api').has_pact_with(
     Provider('duration-provider'),
     port=9000,
-    use_mocking_server=True,
     log_dir='./',
     pact_dir='./'
 )
@@ -21,6 +20,7 @@ class GetDurationContract(unittest.TestCase):
             "id": 42,
             "duration_min": 192,
         }
+
         pact.given(
             'Given a movie exists'
         ).upon_receiving(
