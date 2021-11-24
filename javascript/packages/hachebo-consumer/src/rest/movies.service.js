@@ -1,6 +1,6 @@
+import axios from 'axios'
+
 import Movie from '../movie'
-import adapter from 'axios/lib/adapters/http'
-import { request } from 'axios'
 
 class MovieService {
   constructor(baseUrl, port) {
@@ -12,17 +12,14 @@ class MovieService {
     if (movieId == null) {
       throw new Error('movieId must not be null!')
     }
-    return request(
-      {
-        method: 'GET',
-        url: `/movies/${movieId}`,
-        baseURL: `${this.baseUrl}:${this.port}`,
-        headers: {
-          Accept: 'application/json; charset=utf-8',
-        },
+    return axios({
+      method: 'GET',
+      url: `/movies/${movieId}`,
+      baseURL: `${this.baseUrl}:${this.port}`,
+      headers: {
+        Accept: 'application/json; charset=utf-8',
       },
-      adapter,
-    ).then(response => {
+    }).then(response => {
       const movie = response.data
       return new Promise((resolve, reject) => {
         try {
@@ -37,19 +34,16 @@ class MovieService {
 
   createMovie(movie) {
     this._validateMovieForCreation(movie)
-    return request(
-      {
-        method: 'POST',
-        url: `/movies`,
-        baseURL: `${this.baseUrl}:${this.port}`,
-        headers: {
-          Accept: 'application/json; charset=utf-8',
-          'Content-Type': 'application/json; charset=utf-8',
-        },
-        data: movie,
+    return axios({
+      method: 'POST',
+      url: `/movies`,
+      baseURL: `${this.baseUrl}:${this.port}`,
+      headers: {
+        Accept: 'application/json; charset=utf-8',
+        'Content-Type': 'application/json; charset=utf-8',
       },
-      adapter,
-    ).then(response => {
+      data: movie,
+    }).then(response => {
       const movie = response.data
       return new Promise((resolve, reject) => {
         try {
