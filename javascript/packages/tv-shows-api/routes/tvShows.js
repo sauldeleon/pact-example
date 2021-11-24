@@ -1,12 +1,13 @@
 const express = require('express')
 const router = express.Router()
 
-const DurationService = require('../services/DurationService/DurationService')
+const DurationService = require('../services/duration/duration.service')
 
 // year is missing, it will fail!
 router.route('/:tv_show_id').get(async function (req, res) {
   const tvShowId = parseInt(req.params['tv_show_id'])
-  duration = await DurationService.getTvShowDuration(tvShowId)
+  const durationService = new DurationService('http://localhost', 9000)
+  duration = await durationService.getTvShowDuration(tvShowId)
   res.status(200)
   res.json({
     id: tvShowId,

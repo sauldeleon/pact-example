@@ -13,7 +13,7 @@ global.moviesProvider = new Pact({
   spec: 2,
   pactfileWriteMode: 'update',
   consumer: 'hachebo-consumer',
-  provider: 'movies-provider',
+  provider: 'movies-api',
   host: 'localhost',
 })
 
@@ -26,6 +26,6 @@ global.tvShowsProvider = new Pact({
   spec: 2,
   pactfileWriteMode: 'update',
   consumer: 'hachebo-consumer',
-  provider: 'tv-shows-provider',
+  provider: 'tv-shows-api',
   host: 'localhost',
 })
