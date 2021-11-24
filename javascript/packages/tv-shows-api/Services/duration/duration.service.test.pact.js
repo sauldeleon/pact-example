@@ -1,12 +1,12 @@
 const { integer } = require('@pact-foundation/pact/src/dsl/matchers')
 
-const { getTvShowDuration } = require('./DurationService')
+const DurationService = require('./duration.service')
 
 describe('Pact with Duration API', () => {
   beforeEach(done => {
     global.durationProvider
       .addInteraction({
-        state: 'there is a movie id',
+        state: 'there is an existing tv show',
         uponReceiving: 'a request for tv show duration',
         withRequest: {
           path: '/duration/42',
@@ -21,7 +21,8 @@ describe('Pact with Duration API', () => {
   })
 
   it('will receive the duration of tv show', async done => {
-    const result = await getTvShowDuration(42)
+    const duration = new DurationService('http://localhost', global.durationPort)
+    const result = await duration.getTvShowDuration(42)
     expect(result).toEqual(expect.any(Number))
     global.durationProvider.verify().then(
       () => done(),

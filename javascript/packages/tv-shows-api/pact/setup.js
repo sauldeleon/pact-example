@@ -10,7 +10,7 @@ global.durationProvider = new Pact({
   dir: path.resolve(process.cwd(), 'pacts'),
   spec: 2,
   pactfileWriteMode: 'update',
-  consumer: 'tv-shows-provider',
+  consumer: 'tv-shows-api',
   provider: 'duration-provider',
   host: 'localhost',
 })
