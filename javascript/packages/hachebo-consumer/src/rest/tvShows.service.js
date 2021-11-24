@@ -1,6 +1,6 @@
+import axios from 'axios'
+
 import TvShow from '../tvShow'
-import adapter from 'axios/lib/adapters/http'
-import { request } from 'axios'
 
 class TvShowService {
   constructor(baseUrl, port) {
@@ -12,17 +12,14 @@ class TvShowService {
     if (tvShowId == null) {
       throw new Error('tvShowId must not be null!')
     }
-    return request(
-      {
-        method: 'GET',
-        url: `/tv-shows/${tvShowId}`,
-        baseURL: `${this.baseUrl}:${this.port}`,
-        headers: {
-          Accept: 'application/json; charset=utf-8',
-        },
+    return axios({
+      method: 'GET',
+      url: `/tv-shows/${tvShowId}`,
+      baseURL: `${this.baseUrl}:${this.port}`,
+      headers: {
+        Accept: 'application/json; charset=utf-8',
       },
-      adapter,
-    ).then(response => {
+    }).then(response => {
       const tvShow = response.data
       return new Promise((resolve, reject) => {
         try {
@@ -37,19 +34,16 @@ class TvShowService {
 
   createTvShow(tvShow) {
     this._validateTvShowForCreation(tvShow)
-    return request(
-      {
-        method: 'POST',
-        url: `/tv-shows`,
-        baseURL: `${this.baseUrl}:${this.port}`,
-        headers: {
-          Accept: 'application/json; charset=utf-8',
-          'Content-Type': 'application/json; charset=utf-8',
-        },
-        data: tvShow,
+    return axios({
+      method: 'POST',
+      url: `/tv-shows`,
+      baseURL: `${this.baseUrl}:${this.port}`,
+      headers: {
+        Accept: 'application/json; charset=utf-8',
+        'Content-Type': 'application/json; charset=utf-8',
       },
-      adapter,
-    ).then(response => {
+      data: tvShow,
+    }).then(response => {
       const tvShow = response.data
       return new Promise((resolve, reject) => {
         try {

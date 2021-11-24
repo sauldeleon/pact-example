@@ -10,12 +10,12 @@ async function startVerification() {
 
 startVerification().then(() => {
   const opts = {
-    providerBaseUrl: 'http://localhost:3000',
+    providerBaseUrl: 'http://localhost:3001',
     provider: 'tv-shows-api',
     pactBrokerUrl: 'http://localhost',
     publishVerificationResult: true,
     providerVersion: packageJson.version,
-    providerStatesSetupUrl: 'http://localhost:3000/provider-state',
+    providerStatesSetupUrl: 'http://localhost:3001/provider-state',
   }
 
   new Verifier().verifyProvider(opts).then(function () {

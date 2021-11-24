@@ -6,7 +6,7 @@
     "start": "node ./bin/www",
     "test:consumer": "jest --runInBand --setupFiles ./pact/setup.js --setupFilesAfterEnv ./pact/jest-wrapper.js --testMatch \"**/*.test.pact.js\"",
     "pact:verify": "node ./pact/provider_tests.js",
-    "test:provider": "PACT_MODE=true start-server-and-test start http://localhost:3000 pact:verify",
+    "test:provider": "PACT_MODE=true start-server-and-test start http://localhost:3001 pact:verify",
     "test:pact": "run-s test:consumer test:provider",
     "test": "jest --setupFilesAfterEnv ./setupTests.js --testMatch \"**/*.test.js\"",
     "publish:pact": "node pact/publish.js",
