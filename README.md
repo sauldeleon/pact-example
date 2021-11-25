@@ -83,3 +83,14 @@ First, start the local apps, then
   cd pacts/pactman
   python -m unittest create_pact_live.GetDurationContract.test_get_duration
   ```
+### Publish pacts
+- Pactman
+  ```bash
+  make pactman-movies-api-publish
+  ```
+
+### Verify duration-provider pacts
+- Pactman
+  ```bash
+  make pactman-duration-provider-verify
+  ```
