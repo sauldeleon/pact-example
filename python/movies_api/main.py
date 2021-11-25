@@ -1,9 +1,11 @@
 from typing import Dict, Any, Optional
-from fastapi import FastAPI
+from fastapi import FastAPI, Response
+from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 import requests
 
 JSON_RESULT = {
+    "id": 42,
     "name": "The Silence of the Lambs",
     "genre": "Terror",
     "director": "Jonathan Demme",
@@ -11,6 +13,7 @@ JSON_RESULT = {
 }
 
 DURATION_PROVIDER_ENDPOINT = 'http://localhost:9000/duration'
+HEADERS = {"Content-Type": "application/json; charset=utf-8"}
 
 class Movie(BaseModel):
     name: str
@@ -32,11 +35,13 @@ async def movie(movie_id: int):
 
     JSON_RESULT['duration_min'] = duration_min
 
-    return JSON_RESULT
+    return JSONResponse(content=JSON_RESULT, headers=HEADERS)
 
-@app.post("/movies", status_code=201)
+@app.post("/movies")
 async def create_movie(movie: Movie):
-    return movie
+    content = dict(movie)
+    content['id'] = 42
+    return JSONResponse(content=content, headers=HEADERS, status_code=201)
 
 @app.post('/_pact/provider_states')
 def provider_states(item: Dict[Any, Any] = None):
