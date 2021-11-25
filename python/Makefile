@@ -14,7 +14,10 @@ pactman-duration-provider-verify:
 pactman-movies-api-verify:
 	pactman-verifier -b http://localhost/ movies-api http://localhost:9001 http://localhost:9001/_pact/provider_states -a $(MOVIES_API_VERSION) -r
 
+pactman-movies-api-verify-prg:
+	python ./movies_api/launch.py
+
 pactman-movies-api-publish:
 	$ curl -v --silent --output /dev/null --show-error --fail -XPUT \-H "Content-Type: application/json" -d@pacts/pactman/movies-api-duration-provider-pact.json http://localhost/pacts/provider/duration-provider/consumer/movies-api/version/$(call args, $(MOVIES_API_VERSION))
 
-.PHONY: pactman-movies-api-publish pactman-duration-provider-verify pactman-movies-api-verify
+.PHONY: pactman-movies-api-publish pactman-duration-provider-verify pactman-movies-api-verify pactman-movies-api-verify-prg

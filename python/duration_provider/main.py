@@ -1,6 +1,9 @@
+import uvicorn
 from typing import Dict, Any
 
 from fastapi import FastAPI
+
+PORT = 9000
 
 app = FastAPI()
 
@@ -13,3 +16,7 @@ async def duration(media_id: int):
 @app.post('/_pact/provider_states')
 def provider_states(item: Dict[Any, Any] = None):
     return {'result': item['state']}
+
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=PORT)
