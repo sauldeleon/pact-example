@@ -63,14 +63,14 @@ describe('MovieService API', () => {
               Accept: contentTypeJsonMatcher,
               'Content-Type': contentTypeJsonMatcher,
             },
-            body: new Movie('The Silence of the Lambs', 'Terror', 'Jonathan Demme'),
+            body: new Movie('The Silence of the Lambs', 'Jonathan Demme', 'Terror'),
           },
           willRespondWith: {
             status: 201,
             headers: {
               'Content-Type': contentTypeJsonMatcher,
             },
-            body: Pact.Matchers.somethingLike(new Movie('The Silence of the Lambs', 'Terror', 'Jonathan Demme', 42)),
+            body: Pact.Matchers.somethingLike(new Movie('The Silence of the Lambs', 'Jonathan Demme', 'Terror', 42)),
           },
         })
         .then(() => done())
@@ -78,7 +78,7 @@ describe('MovieService API', () => {
 
     it('sends a request according to contract', done => {
       movieService
-        .createMovie(new Movie('The Silence of the Lambs', 'Terror', 'Jonathan Demme'))
+        .createMovie(new Movie('The Silence of the Lambs', 'Jonathan Demme', 'Terror'))
         .then(movie => expect(movie.id).toEqual(42))
         .then(() =>
           global.moviesProvider.verify().then(
