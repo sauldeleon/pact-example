@@ -63,37 +63,14 @@ cd movies_api
 uvicorn main:app --reload --port 9001
 ```
 
-### Generate pacts (with mocks)
-
-- Pact-python
-
-  ```bash
-  cd pacts/pact-python
-  python -m unittest create_pact_mocked.GetDurationContract.test_get_duration
-  ```
+### Generate Movies API pacts
 
 - Pactman
   ```bash
-  cd pacts/pactman
-  python -m unittest create_pact_mocked.GetDurationContract.test_get_duration
+  cd movies_api/tests
+  python -m unittest create_pact_mocked.DurationContract
   ```
 
-### Generate pacts (no mocks)
-
-First, start the local apps, then
-
-- Pact-python
-
-  ```bash
-  cd pacts/pact-python
-  python -m unittest create_pact_live.GetDurationContract.test_get_duration
-  ```
-
-- Pactman
-  ```bash
-  cd pacts/pactman
-  python -m unittest create_pact_live.GetDurationContract.test_get_duration
-  ```
 ### Publish pacts
 - Pactman
   ```bash

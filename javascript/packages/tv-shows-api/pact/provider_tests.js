@@ -15,6 +15,10 @@ startMockServer().then(() => {
     pactBrokerUrl: 'http://localhost',
     publishVerificationResult: true,
     providerVersion: packageJson.version,
+    stateHandlers: {
+      ['a tv show exists']: () => {},
+      ['provider allows tv show creation']: () => {},
+    },
   }
 
   new Verifier(opts).verifyProvider().then(function () {

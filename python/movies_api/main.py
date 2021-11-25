@@ -1,8 +1,9 @@
 from typing import Dict, Any, Optional
-from fastapi import FastAPI, Response
+from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 import requests
+import random
 
 JSON_RESULT = {
     "id": 42,
@@ -10,6 +11,7 @@ JSON_RESULT = {
     "genre": "Terror",
     "director": "Jonathan Demme",
     "year": 1991,
+    "duration_min": 192
 }
 
 DURATION_PROVIDER_ENDPOINT = 'http://localhost:9000/duration'
@@ -20,6 +22,7 @@ class Movie(BaseModel):
     genre: str
     director: str
     year: Optional[int] = None
+    duration_min: int
 
 app = FastAPI()
 
@@ -27,6 +30,9 @@ def get_duration(movie_id):
     response = requests.get(f"{DURATION_PROVIDER_ENDPOINT}/{movie_id}")
     return response.json()
 
+def post_duration(duration_min):
+    response = requests.post(f"{DURATION_PROVIDER_ENDPOINT}", json={'duration_min': duration_min})
+    return response.json()
 
 @app.get("/movies/{movie_id}")
 async def movie(movie_id: int):
@@ -39,8 +45,9 @@ async def movie(movie_id: int):
 
 @app.post("/movies")
 async def create_movie(movie: Movie):
+    post_duration(movie.duration_min)
     content = dict(movie)
-    content['id'] = 42
+    content['id'] = random.randint(1, 100)
     return JSONResponse(content=content, headers=HEADERS, status_code=201)
 
 @app.post('/_pact/provider_states')
