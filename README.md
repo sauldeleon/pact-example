@@ -88,3 +88,9 @@ First, start the local apps, then
   ```bash
   make pactman-movies-api-publish
   ```
+
+### Verify duration-provider pacts
+- Pactman
+  ```bash
+  make pactman-duration-provider-verify
+  ```
