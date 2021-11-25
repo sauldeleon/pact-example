@@ -26,7 +26,7 @@
 
 ### Running Pact tests
 
-- In the javascript directory, run `yarn pact`. It will run the pact tests in each project. `yarn pact:publish` will publish the results if it's a consumer or verify them if it's a provider.
+- In the javascript directory, run `yarn pact`. It will run the pact tests in each project. `yarn pact:publish` will publish the results of the consumers. `yarn pact:verify` will verify all existing published pacts by each respective provider.
 - You can also run manually each pact test or publishing with the following commands:
   - `yarn pact:hachebo`: hachebo pact testing and publish results
   - `yarn pact:neflis`: neflis pact testing and publish results
@@ -36,8 +36,9 @@
   - `pact:hachebo:publish`: hachebo publish results
   - `pact:neflis`: netflis pact testing
   - `pact:neflis:publish`: netflis publish results
-  - `pact:tv-shows`: netflis pact testing
-  - `pact:tv-shows:publish`: netflish publish results
+  - `pact:tv-shows`: tv-shows-api pact testing
+  - `pact:tv-shows:publish`: tv-shows-api publish results
+  - `pact:tv-shows:verify`: tv-shows-api verify pacts
 
 ## Python
 

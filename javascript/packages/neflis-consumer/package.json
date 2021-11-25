@@ -9,7 +9,7 @@
     "eject": "react-scripts eject",
     "test:pact": "cross-env react-scripts test --runInBand --setupFiles ./pact/setup.js --setupFilesAfterEnv ./pact/jest-wrapper.js --testMatch \"**/*.test.pact.js\"",
     "test:pact:ci": "CI=true yarn test:pact",
-    "publish:pact": "node pact/publish.js",
+    "pact:publish": "node pact/publish.js",
     "ncu": "ncu"
   },
   "dependencies": {
