@@ -3,22 +3,21 @@ const mockServer = require('mockttp').getLocal()
 
 const packageJson = require('../package.json')
 
-async function startVerification() {
+async function startMockServer() {
   mockServer.start(9000)
   await mockServer.get('/duration/42').thenReply(200, JSON.stringify({ id: 42, duration_min: 60 }))
 }
 
-startVerification().then(() => {
+startMockServer().then(() => {
   const opts = {
     providerBaseUrl: 'http://localhost:3001',
     provider: 'tv-shows-api',
     pactBrokerUrl: 'http://localhost',
     publishVerificationResult: true,
     providerVersion: packageJson.version,
-    providerStatesSetupUrl: 'http://localhost:3001/provider-state',
   }
 
-  new Verifier().verifyProvider(opts).then(function () {
+  new Verifier(opts).verifyProvider().then(function () {
     console.log('Pacts successfully verified!')
     mockServer.stop()
   })

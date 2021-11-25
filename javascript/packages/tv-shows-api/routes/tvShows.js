@@ -1,13 +1,13 @@
 const express = require('express')
 const router = express.Router()
 
-const DurationService = require('../services/duration/duration.service')
+const DurationService = require('../Services/duration/duration.service')
 
 // year is missing, it will fail!
 router.route('/:tv_show_id').get(async function (req, res) {
   const tvShowId = parseInt(req.params['tv_show_id'])
   const durationService = new DurationService('http://localhost', 9000)
-  duration = await durationService.getTvShowDuration(tvShowId)
+  const duration = await durationService.getTvShowDuration(tvShowId)
   res.status(200)
   res.json({
     id: tvShowId,
@@ -16,7 +16,7 @@ router.route('/:tv_show_id').get(async function (req, res) {
     genre: 'Humor',
     seasons: 10,
     duration: duration,
-    // year: 1994, // uncomment this line to get the pacts working again!
+    year: 1994, // uncomment this line to get the pacts working again!
   })
 })
 
@@ -28,7 +28,7 @@ router.route('/').post(function (req, res) {
     director: 'David Crane, Marta Kauffman',
     genre: 'Humor',
     seasons: 10,
-    // year: 1994,
+    year: 1994,
   })
 })
 
