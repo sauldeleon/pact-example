@@ -14,7 +14,7 @@ JSON_RESULT = {
     "genre": "Terror",
     "director": "Jonathan Demme",
     "year": 1991,
-    "duration_min": 192
+    "duration": 192
 }
 
 DURATION_PROVIDER_ENDPOINT = 'http://localhost:9000/duration'
@@ -25,8 +25,8 @@ class Movie(BaseModel):
     genre: str
     director: str
     year: Optional[int] = None
-    duration_min: Optional[int] = None
-    # duration_min: int
+    duration: Optional[int] = None
+    # duration: int
 
 app = FastAPI()
 
@@ -42,14 +42,15 @@ def post_duration(duration_min):
 async def movie(movie_id: int):
     response = get_duration(movie_id)
     duration_min = response.get('duration_min')
-
-    JSON_RESULT['duration_min'] = duration_min
+    if duration_min is not None:
+        JSON_RESULT['duration'] = duration_min
 
     return JSONResponse(content=JSON_RESULT, headers=HEADERS)
 
 @app.post("/movies")
 async def create_movie(movie: Movie):
-    post_duration(movie.duration_min)
+    if  movie.duration is not None:
+        post_duration(movie.duration)
     content = dict(movie)
     content['id'] = random.randint(1, 100)
     return JSONResponse(content=content, headers=HEADERS, status_code=201)
