@@ -1,0 +1,37 @@
+{
+  "consumer": {
+    "name": "tv-shows-api"
+  },
+  "provider": {
+    "name": "duration-provider"
+  },
+  "interactions": [
+    {
+      "description": "a request for tv show duration",
+      "providerState": "there is an existing tv show",
+      "request": {
+        "method": "GET",
+        "path": "/duration/42"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+        },
+        "body": {
+          "id": 42,
+          "duration_min": 13
+        },
+        "matchingRules": {
+          "$.body.duration_min": {
+            "match": "type"
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}
