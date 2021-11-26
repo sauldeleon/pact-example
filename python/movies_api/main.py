@@ -23,7 +23,7 @@ class Movie(BaseModel):
     genre: str
     director: str
     year: Optional[int] = None
-    duration_min: Optional[int] = None
+    duration: Optional[int] = None
     # duration_min: int
 
 app = FastAPI()
@@ -41,13 +41,13 @@ async def movie(movie_id: int):
     response = get_duration(movie_id)
     duration_min = response['duration_min']
 
-    JSON_RESULT['duration_min'] = duration_min
+    JSON_RESULT['duration'] = duration_min
 
     return JSONResponse(content=JSON_RESULT, headers=HEADERS)
 
 @app.post("/movies")
 async def create_movie(movie: Movie):
-    post_duration(movie.duration_min)
+    post_duration(movie.duration)
     content = dict(movie)
     content['id'] = random.randint(1, 100)
     return JSONResponse(content=content, headers=HEADERS, status_code=201)
