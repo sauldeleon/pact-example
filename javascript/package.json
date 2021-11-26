@@ -14,7 +14,7 @@
     "pact:hachebo:publish": "yarn workspace hachebo-consumer pact:publish",
     "pact:neflis": "yarn workspace neflis-consumer test:pact:ci",
     "pact:neflis:publish": "yarn workspace neflis-consumer pact:publish",
-    "pact:tv-shows": "yarn workspace tv-shows-api test:pact",
+    "pact:tv-shows": "yarn workspace tv-shows-api test:pact:ci",
     "pact:tv-shows:publish": "yarn workspace tv-shows-api pact:publish",
     "pact:tv-shows:verify": "yarn workspace tv-shows-api pact:verify",
     "pact:publish": "run-s pact:hachebo:publish pact:neflis:publish pact:tv-shows:publish",

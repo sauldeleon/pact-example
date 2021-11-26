@@ -8,6 +8,7 @@
     "pact:verify:process": "node ./pact/provider_tests.js",
     "pact:verify": "PACT_MODE=true start-server-and-test start http://localhost:3001 pact:verify:process",
     "test:pact": "run-s test:consumer",
+    "test:pact:ci": "CI=true yarn test:pact",
     "test": "jest --setupFilesAfterEnv ./setupTests.js --testMatch \"**/*.test.js\"",
     "pact:publish": "node pact/publish.js",
     "ncu": "ncu"

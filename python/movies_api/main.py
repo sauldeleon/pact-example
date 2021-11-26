@@ -4,6 +4,7 @@ from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 import requests
 import random
+import logging
 
 JSON_RESULT = {
     "id": 42,
@@ -22,7 +23,8 @@ class Movie(BaseModel):
     genre: str
     director: str
     year: Optional[int] = None
-    duration_min: int
+    duration_min: Optional[int] = None
+    # duration_min: int
 
 app = FastAPI()
 

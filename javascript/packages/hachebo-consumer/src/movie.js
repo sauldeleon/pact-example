@@ -1,10 +1,11 @@
 class Movie {
-  constructor(name, director, genre, year, id) {
+  constructor(name, director, genre, year, duration, id) {
     this.id = id
     this.name = name
     this.genre = genre
     this.director = director
     this.year = year
+    this.duration = duration
   }
 
   static validateName(movie) {
@@ -28,6 +29,12 @@ class Movie {
   static validateYear(movie) {
     if (typeof movie.year !== 'number') {
       throw new Error(`Year must be a number! Invalid value: ${movie.year}`)
+    }
+  }
+
+  static validateDuration(movie) {
+    if (typeof movie.duration !== 'number') {
+      throw new Error(`Duration must be a number! Invalid value: ${movie.duration}`)
     }
   }
 

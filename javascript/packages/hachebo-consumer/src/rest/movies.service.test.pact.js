@@ -31,7 +31,7 @@ describe('MovieService API', () => {
               'Content-Type': contentTypeJsonMatcher,
             },
             body: Pact.Matchers.somethingLike(
-              new Movie('The Silence of the Lambs', 'Terror', 'Jonathan Demme', 1991, 42),
+              new Movie('The Silence of the Lambs', 'Terror', 'Jonathan Demme', 1991, 192, 42),
             ),
           },
         })
@@ -65,7 +65,7 @@ describe('MovieService API', () => {
               Accept: contentTypeJsonMatcher,
               'Content-Type': contentTypeJsonMatcher,
             },
-            body: new Movie('The Silence of the Lambs', 'Terror', 'Jonathan Demme', 1991),
+            body: new Movie('The Silence of the Lambs', 'Terror', 'Jonathan Demme', 1991, 192),
           },
           willRespondWith: {
             status: 201,
@@ -73,7 +73,7 @@ describe('MovieService API', () => {
               'Content-Type': contentTypeJsonMatcher,
             },
             body: Pact.Matchers.somethingLike(
-              new Movie('The Silence of the Lambs', 'Terror', 'Jonathan Demme', 1991, 42),
+              new Movie('The Silence of the Lambs', 'Terror', 'Jonathan Demme', 1991, 192, 42),
             ),
           },
         })
@@ -82,7 +82,7 @@ describe('MovieService API', () => {
 
     it('sends a request according to contract', done => {
       movieService
-        .createMovie(new Movie('The Silence of the Lambs', 'Terror', 'Jonathan Demme', 1991, 42))
+        .createMovie(new Movie('The Silence of the Lambs', 'Terror', 'Jonathan Demme', 1991, 192, 42))
         .then(movie => expect(movie.year).toEqual(1991))
         .then(() =>
           global.moviesProvider.verify().then(
