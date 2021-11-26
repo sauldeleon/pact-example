@@ -35,6 +35,7 @@ pact-broker/ssl/cert
 .env
 javascript/packages/**/logs/*
 python/**/*.pyc
+.out
 
 npm-debug.log*
 yarn-debug.log*

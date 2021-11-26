@@ -1,11 +1,15 @@
 from typing import Dict, Any
 import random
 from pydantic import BaseModel
+import uvicorn
 
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 
+PORT = 9000
+HOST = "127.0.0.1"
 HEADERS = {"Content-Type": "application/json"}
+
 class Duration(BaseModel):
     duration_min: int
 
@@ -25,3 +29,7 @@ async def create_duration(duration: Duration):
 @app.post('/_pact/provider_states')
 def provider_states(item: Dict[Any, Any] = None):
     return {'result': item['state']}
+
+
+if __name__ == "__main__":
+    uvicorn.run(app, host=HOST, port=PORT)
