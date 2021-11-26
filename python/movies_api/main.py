@@ -4,8 +4,10 @@ from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 import requests
 import random
-import logging
+import uvicorn
 
+PORT = 9001
+HOST = "127.0.0.1"
 JSON_RESULT = {
     "id": 42,
     "name": "The Silence of the Lambs",
@@ -39,7 +41,7 @@ def post_duration(duration_min):
 @app.get("/movies/{movie_id}")
 async def movie(movie_id: int):
     response = get_duration(movie_id)
-    duration_min = response['duration_min']
+    duration_min = response.get('duration_min')
 
     JSON_RESULT['duration_min'] = duration_min
 
@@ -55,3 +57,7 @@ async def create_movie(movie: Movie):
 @app.post('/_pact/provider_states')
 def provider_states(item: Dict[Any, Any] = None):
     return {'result': item['state']}
+
+
+if __name__ == "__main__":
+    uvicorn.run(app, host=HOST, port=PORT)

@@ -20,4 +20,10 @@ movies-api-verify:
 duration-provider-verify:
 	pactman-verifier -b http://localhost/ duration-provider http://localhost:9000 http://localhost:9000/_pact/provider_states -a $(DURATION_PROVIDER_VERSION) -r
 
-.PHONY: movies-api-generate movies-api-publish movies-api-verify duration-provider-verify
+servers-start:
+	nohup python movies_api/main.py & nohup python duration_provider/main.py &
+
+servers-shutdown:
+	kill $$(lsof -t -i :9000); kill $$(lsof -t -i :9001)
+
+.PHONY: movies-api-generate movies-api-publish movies-api-verify duration-provider-verify start-servers shutdown-servers
