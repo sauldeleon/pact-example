@@ -53,32 +53,34 @@ pip install .
 
 ### Start local apps
 
+#### Start duration-provider
 ```bash
 cd duration_provider
 uvicorn main:app --reload --port 9000
 ```
 
+#### Start movies-api
 ```bash
 cd movies_api
 uvicorn main:app --reload --port 9001
 ```
 
-### Generate Movies API pacts
+### Generate movies-api pacts
+```bash
+make movies-api-generate
+```
 
-- Pactman
-  ```bash
-  cd movies_api/tests
-  python -m unittest create_pact_mocked.DurationContract
-  ```
+### Publish movies-api pacts
+```bash
+make movies-api-publish
+```
 
-### Publish pacts
-- Pactman
-  ```bash
-  make pactman-movies-api-publish
-  ```
+### Verify movies-api pacts
+```bash
+make movies-api-verify
+```
 
 ### Verify duration-provider pacts
-- Pactman
-  ```bash
-  make pactman-duration-provider-verify
-  ```
+```bash
+make duration-provider-verify
+```
