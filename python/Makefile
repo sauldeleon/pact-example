@@ -9,7 +9,7 @@ args = `arg="$(filter-out $@,$(MAKECMDGOALS))" && echo $${arg:-${1}}`
 	@:
 
 movies-api-generate:
-	python -m unittest movies_api/tests/create_pact.DurationContract
+	pytest movies_api/tests/create_pact.py -o log_cli=true
 
 movies-api-publish:
 	$ curl -v --silent --output /dev/null --show-error --fail -XPUT \-H "Content-Type: application/json" -d@movies_api/pacts/movies-api-duration-provider-pact.json http://localhost/pacts/provider/duration-provider/consumer/movies-api/version/$(call args, $(MOVIES_API_VERSION))

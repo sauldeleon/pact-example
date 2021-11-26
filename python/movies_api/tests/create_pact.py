@@ -6,8 +6,8 @@ from movies_api.main import get_duration, post_duration
 pact = Consumer('movies-api').has_pact_with(
     Provider('duration-provider'),
     port=9000,
-    log_dir='./',
-    pact_dir='../pacts'
+    log_dir='./movies_api/logs',
+    pact_dir='./movies_api/pacts'
 )
 pact.start_service()
 atexit.register(pact.stop_service)
