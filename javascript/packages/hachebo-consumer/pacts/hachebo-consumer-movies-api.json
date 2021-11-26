@@ -32,7 +32,8 @@
           "name": "The Silence of the Lambs",
           "genre": "Jonathan Demme",
           "director": "Terror",
-          "year": 1991
+          "year": 1991,
+          "duration": 192
         },
         "matchingRules": {
           "$.headers.Content-Type": {
@@ -59,7 +60,8 @@
           "name": "The Silence of the Lambs",
           "genre": "Jonathan Demme",
           "director": "Terror",
-          "year": 1991
+          "year": 1991,
+          "duration": 192
         },
         "matchingRules": {
           "$.headers.Accept": {
@@ -82,7 +84,8 @@
           "name": "The Silence of the Lambs",
           "genre": "Jonathan Demme",
           "director": "Terror",
-          "year": 1991
+          "year": 1991,
+          "duration": 192
         },
         "matchingRules": {
           "$.headers.Content-Type": {

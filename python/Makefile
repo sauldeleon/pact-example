@@ -15,9 +15,9 @@ movies-api-publish:
 	$ curl -v --silent --output /dev/null --show-error --fail -XPUT \-H "Content-Type: application/json" -d@movies_api/pacts/movies-api-duration-provider-pact.json http://localhost/pacts/provider/duration-provider/consumer/movies-api/version/$(call args, $(MOVIES_API_VERSION))
 
 movies-api-verify:
-	pactman-verifier -b http://localhost/ movies-api http://localhost:9001 http://localhost:9001/_pact/provider_states -a $(MOVIES_API_VERSION) -r
+	pytest --pact-publish-results --pact-broker-url http://localhost/ --pact-provider-name=movies-api --pact-provider-version=$(MOVIES_API_VERSION) movies_api/verify_pacts.py -v
 
 duration-provider-verify:
-	pactman-verifier -b http://localhost/ duration-provider http://localhost:9000 http://localhost:9000/_pact/provider_states -a $(DURATION_PROVIDER_VERSION) -r
+	pytest --pact-publish-results --pact-broker-url http://localhost/ --pact-provider-name=duration-provider --pact-provider-version=$(DURATION_PROVIDER_VERSION) duration_provider/verify_pacts.py -v
 
 .PHONY: movies-api-generate movies-api-publish movies-api-verify duration-provider-verify
