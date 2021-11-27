@@ -21,31 +21,37 @@
 
 ## Javascript
 
-### Set up
+---
+
+### Javascript set up
 
 1. Go to `javascript` folder
-2. Run `yarn` to install dependencies
+2. Install dependencies with `yarn`
+
+   ```bash
+   cd javascript
+   yarn
+   ```
+
 3. Run pact tests :arrow_heading_down:
 
 ### Running Pact tests
 
-- In the javascript directory, run `yarn pact`. It will run the pact tests in each project. `yarn pact:publish` will publish the results of the consumers. `yarn pact:verify` will verify all existing published pacts by each respective provider.
+- In the javascript directory, run `yarn pact`. It will run the pact tests in each project and will generate the pacts inside each package within the _pacts_ folder. `yarn pact:publish` will publish the pact results of the consumers. `yarn pact:verify` will verify all existing published pacts by each respective provider.
 - You can also run manually each pact test or publishing with the following commands:
-  - `yarn pact:hachebo`: hachebo pact testing and publish results
-  - `yarn pact:neflis`: neflis pact testing and publish results
-  - `yarn pact:movies`: movies pact testing and verify results
-  - `yarn pact:tv-shows`: hachebo pact testing and verify results
-  - `pact:hachebo`: hachebo pact testing
-  - `pact:hachebo:publish`: hachebo publish results
-  - `pact:neflis`: netflis pact testing
-  - `pact:neflis:publish`: netflis publish results
-  - `pact:tv-shows`: tv-shows-api pact testing
-  - `pact:tv-shows:publish`: tv-shows-api publish results
-  - `pact:tv-shows:verify`: tv-shows-api verify pacts
+  - `yarn pact:hachebo`: hachebo pact testing and generate pacts
+  - `yarn pact:hachebo:publish`: hachebo pact publish results
+  - `yarn pact:neflis`: neflis pact testing and generate pacts
+  - `yarn pact:neflis:publish`: neflis pact publish results
+  - `yarn pact:tv-shows`: tv shows pact testing and generate pacts
+  - `yarn pact:tv-shows:publish`: tv shows pact publish results
+  - `yarn pact:tv-shows:verify`: tv shows verify pacts
 
 ## Python
 
-### Set up
+---
+
+### Python set up
 
 ```bash
 cd pact-example/python
@@ -54,47 +60,62 @@ source ./venv/bin/activate
 pip install .
 ```
 
-### Start local apps
+### **Start local apps**
 
-#### Start duration-provider
+#### _Start duration-provider_
 
 ```bash
 cd duration_provider
 uvicorn main:app --reload --port 9000
 ```
 
-#### Start all servers in background
+#### _Start movies-api_
+
+```bash
+cd movies-api
+uvicorn main:app --reload --port 9001
+```
+
+#### _Start all servers in background_
 
 ```bash
 make servers-start
 ```
 
-#### Shutdown servers
+#### _Shutdown servers_
 
 ```bash
 make servers-shutdown
 ```
 
-### Generate movies-api pacts
+### **Pacts**
+
+### _Generate movies-api pacts_
 
 ```bash
 make movies-api-generate
 ```
 
-### Publish movies-api pacts
+### _Publish movies-api pacts_
 
 ```bash
 make movies-api-publish
 ```
 
-### Verify movies-api pacts
+### _Verify movies-api pacts_
 
 ```bash
 make movies-api-verify
 ```
 
-### Verify duration-provider pacts
+### _Verify duration-provider pacts_
 
 ```bash
 make duration-provider-verify
 ```
+
+## Schemas
+
+---
+
+Regarding consumer schemas information, check [this](./Consumer%20schemas.md)
