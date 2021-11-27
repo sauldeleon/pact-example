@@ -1,7 +1,7 @@
 #!/usr/bin/make -f
 
-MOVIES_API_VERSION=2.0.0
-DURATION_PROVIDER_VERSION=3.0.0
+MOVIES_API_VERSION=0.1.0
+DURATION_PROVIDER_VERSION=0.0.1
 
 args = `arg="$(filter-out $@,$(MAKECMDGOALS))" && echo $${arg:-${1}}`
 

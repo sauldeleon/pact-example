@@ -10,14 +10,17 @@
 
 - Go to `pact-broker` folder
 - Create `broker.env` and `database.env` files based on sample files in the same folder. Have in mind that the same values should be applied to both files or the app won't connect with the database
-- In order to use `https` you have to add your ssl certificate, generate `pact_cert.pem` and `pact_cert.key` files and push them into `packages/pact-broker/ssl/cert` folder. If you want custom names, override `packages/pact-broker/ssl/nginx.conf` file, lines 16 and 17, with your custom names. Use the following command to generate the certificates. 
+- In order to use `https` you have to add your ssl certificate, generate `pact_cert.pem` and `pact_cert.key` files and push them into `packages/pact-broker/ssl/cert` folder. If you want custom names, override `packages/pact-broker/ssl/nginx.conf` file, lines 16 and 17, with your custom names. Use the following command to generate the certificates.
+
   ```bash
-  openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout pact_key.pem -out pact_cert.pem
+  openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout pact_cert.key -out pact_cert.pem
   ```
+
 - Run `docker-compose up -d`
-- Use your browser to open http://localhost or https://localhost if ssl is configured correctly
+- Use your browser to open <http://localhost> or <https://localhost> if ssl is configured correctly
 
 ## Javascript
+
 ### Set up
 
 1. Go to `javascript` folder
@@ -54,33 +57,44 @@ pip install .
 ### Start local apps
 
 #### Start duration-provider
+
 ```bash
 cd duration_provider
 uvicorn main:app --reload --port 9000
 ```
 
-#### Start movies-api
+#### Start all servers in background
+
 ```bash
-cd movies_api
-uvicorn main:app --reload --port 9001
+make servers-start
+```
+
+#### Shutdown servers
+
+```bash
+make servers-shutdown
 ```
 
 ### Generate movies-api pacts
+
 ```bash
 make movies-api-generate
 ```
 
 ### Publish movies-api pacts
+
 ```bash
 make movies-api-publish
 ```
 
 ### Verify movies-api pacts
+
 ```bash
 make movies-api-verify
 ```
 
 ### Verify duration-provider pacts
+
 ```bash
 make duration-provider-verify
 ```
