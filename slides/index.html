@@ -1,40 +1,377 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+    <title>PACT 101</title>
+    
+    <link rel="stylesheet" href="dist/custom.css">
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/black.css">
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <div class="col" style="width:100%; justify-content: center;">
+            <div class="row" style="width:800px; margin:50px auto; padding:0px 30px; border:5px solid white; border-radius: 40px; box-shadow: 0px 0px 10px 0px #787878">
+              <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" src="assets/pact-logo-icon_white.png" width="200px" style="margin:5px 0;"/>
+              <h1 data-id="pact-logo-text" style="font-size:140px">PACT 101</h1>
+            </div>
+            <div data-id="content" class="col">
+              <h2 class="r-fit-text">We will start in...</h2>
+              <div class="row" style="justify-content: space-evenly;">
+                <h4 id="days"></h4>
+                <h4 id="hours"></h4>
+                <h4 id="mins"></h4>
+                <h4 id="secs" style="margin: var(--r-heading-margin);"></h4>
+              </div>
+              <div class="row">
+                <h4 class="col" id="end"></h4>
+              </div>
+            </div>
+          </div>
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+          <script>
+            // The data/time we want to countdown to
+            var countDownDate = new Date("Dec 03, 2021 13:03:00").getTime();
+        
+            // Run myfunc every second
+            var myfunc = setInterval(function() {
+        
+              var now = new Date().getTime();
+              var timeleft = countDownDate - now;
+                  
+              // Calculating the days, hours, minutes and seconds left
+              var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+              var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+              var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+              var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+                  
+              // Result is output to the specific element
+              document.getElementById("days").innerHTML = days + "d&nbsp;"
+              document.getElementById("hours").innerHTML = hours + "h&nbsp;" 
+              document.getElementById("mins").innerHTML = minutes + "m&nbsp;" 
+              document.getElementById("secs").innerHTML = seconds + "s&nbsp;" 
+                
+              // Display the message when countdown is over
+              if (timeleft < 0) {
+                  clearInterval(myfunc);
+                  document.getElementById("days").innerHTML = ""
+                  document.getElementById("hours").innerHTML = "" 
+                  document.getElementById("mins").innerHTML = ""
+                  document.getElementById("secs").innerHTML = ""
+                  document.getElementById("end").innerHTML = "LET'S GO BITCHES!!";
+              }
+            }, 1000);
+          </script>
+        </section>
+        <section>
+          <section data-auto-animate>
+            <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878">
+              <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
+              <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+            </div>
+            <div data-id="content" class="col" style="height:100%; justify-content: flex-start;">
+              <div class="fragment fade-in joke-notifier"/></div>
+              
+              <p style="font-size: 100px; margin: 50px 0px 100px 0px;">
+                <img src="assets/disclaimer-icon.png" width="90px" style="margin:0px;display: inline-block;vertical-align: middle;padding-bottom: 13px;"/>
+                <span>Disclaimer!</span>
+              </p>
+              <p class="r-fit-text">All characters, corporations or establishments and memes appearing in this tech talk are fictitious. Any resemblance to real persons(living or <b style="color: red;">dead</b>) or companies is purely coincidental.<br/><br/>Several developers were harmed during the making of this presentation.</p>
+            </div>
+          </section>
+          <section data-auto-animate>
+            <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878">
+              <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;">
+              <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+            </div>
+            <p class="r-fit-text">
+              Welcome!
+            </p>
+          </section>
+          <section data-auto-animate>
+            <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878">
+              <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
+              <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+            </div>
+            <p style="font-size: 60px;">
+              Welcome!
+            </p>
+            <div class="r-stretch col" style="margin-bottom:40px">
+              <div data-fragment-index="1" class="row fragment semi-fade-out" style="flex:1">
+                <div style="font-size: 70px;">The wat:</div>
+                <div style="font-size: 25px;">Explain a way to improve our test workflow accross applications</div>
+              </div>
+              <div data-fragment-index="1" class="row fragment fade-in" style="flex:1">
+                <div data-fragment-index="2" class="row fragment semi-fade-out" >
+                  <div style="font-size: 70px;">The guai:</div>
+                  <div style="font-size: 25px;">We are facing issues due to constant changes of our APIs</div>
+                </div>
+              </div>
+              <div data-fragment-index="2" class="row fragment fade-in" style="flex:1">
+                <div style="font-size: 70px; ">The ju:</div>
+                <div class="">
+                  <img class="fragment fade-right" data-src="assets/miguel.png" height="180px" style="margin:0; border-radius: 50%;"/>
+                  <img class="fragment fade-up" data-src="assets/valerio.png" height="180px" style="margin:0; border-radius: 50%; margin-left:40px;"/>
+                  <img class="fragment fade-left" data-src="assets/saul.png" height="180px" style="margin:0; border-radius: 50%;margin-left:40px;"/>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section data-auto-animate>
+            <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878">
+              <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
+              <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+            </div>
+            <p>
+              Special thanks to:
+            </p>
+            <div class="r-stretch container">
+              <div class="col">
+                PAULA. David Martin por echar un cable con cosillas de python, Elena Sansigre y Javier Capilla por dejarme usar ratos del sprint para esto, Beatriz Gallego por ayuda con logos y diseños, Raúl González por confiarme esta presentacion, Jaime Sánchez por apretar en los sprints para llevar a cabo todo y mucho soporte moral
+              </div>
+            </div>
+          </section>
+          <section data-auto-animate>
+            <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878">
+              <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
+              <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+            </div>
+            <p style="font-size: 100px; margin: 50px 0px 100px 0px;">
+              <img src="assets/roadmap-icon.png" width="70px" style="margin:0 20px; display: inline-block;vertical-align: middle; padding-bottom: 13px;"/>
+              <span>Roadmap</span>
+            </p>
+            <div class="r-stretch col" style="margin:30px">
+              <ol>
+                <li class="fragment fade-in-then-semi-out" style="margin-bottom: 20px;">A common history. Use case and current problems.</li>
+                <li class="fragment fade-in-then-semi-out" style="margin-bottom: 20px;">PACT main concepts.</li>
+                <li class="fragment fade-in-then-semi-out" style="margin-bottom: 20px;">POC</li>
+                <li class="fragment fade-in-then-semi-out" style="margin-bottom: 20px;">Next steps</li>
+                <li class="fragment fade-in">Forum. Questions.</li>
+              </ol>	
+            </div>
+          </section>
+        </section>
+        <section>
+          <section data-auto-animate>
+            <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878">
+              <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
+              <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+            </div>
+            <p style="font-size: 60px; margin: 50px 0px;">
+              A small history...
+            </p>
+            <div class="row" style="justify-content: space-evenly;">
+              <div class="fragment fade-right" style="font-size: 30px; margin: 50px 0px 100px 0px;">
+                <p>The Dev 1</p>
+                <img class="centered-and-cropped" width="200" height="200" style="border-radius:50%" src="assets/consumer.jpeg"/>
+              </div>
+              <div class="fragment fade-left" style="font-size: 30px; margin: 50px 0px 100px 0px;">
+                <p>The Dev 2</p>
+                <img class="centered-and-cropped" width="200" height="200" style="border-radius:50%" src="assets/provider.jpeg" />
+              </div>
+            </div>
+          </section>
+          <section data-auto-animate>
+            <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878">
+              <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
+              <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+            </div>
+            <p style="font-size: 60px; margin: 50px 0px;">
+              I promise...
+            </p>
+            <blockquote data-fragment-index="1" class="fragment">
+              <q>I will never change this API...</q>
+            </blockquote>
+            <blockquote data-fragment-index="2" class="fragment">
+              <q>... and if it changes, don't worry I'll keep you posted ...</q>
+            </blockquote>
+            <blockquote data-fragment-index="3" class="fragment">
+              <q>... and it is also well documented!</q>
+            </blockquote>
+            <div class="row" style="justify-content: space-evenly;">
+              <img data-fragment-index="3" class="fragment" height="100" src="assets/google-docs-logo.png"/>
+              <img data-fragment-index="3" class="fragment" height="100" src="assets/openapi-logo.png"/>
+              <img data-fragment-index="3" class="fragment" height="100" src="assets/swagger-logo.png"/>
+            </div>
+          </section>
+          <section data-auto-animate>
+            <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878">
+              <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
+              <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+            </div>
+            <div class="col" style="align-items: center;">
+              <img class="fragment" height="200" width="500" style="border-radius: 5px"  src="assets/inevitability.gif"/>
+              <img class="fragment" height="400" style="border-radius: 5px" src="assets/explosion-2.gif"/>
+            </div>
+          </section>
+          <section data-auto-animate>
+            <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878">
+              <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
+              <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+            </div>
+            <div class="col" style="align-items: center; height: 100%;">
+              <p style="font-size: 50px;">
+                Possible solution?
+              </p>
+              <p class="r-fit-text">
+                <span data-fragment-index="4" class="fragment">C</span><span data-fragment-index="6" class="fragment">onsumer </span>
+                <span data-fragment-index="2" class="fragment">D</span><span data-fragment-index="6" class="fragment">riven </span>
+                <span data-fragment-index="3" class="fragment">C</span><span data-fragment-index="6" class="fragment">ontract </span>
+                <span data-fragment-index="1" class="fragment">T</span><span data-fragment-index="6" class="fragment">esting </span>
+              </p>
+              <img class="fragment" src="assets/pact-logo-text_white.png"/>
+              <div class="row fragment" style="justify-content: center;">
+                <img class="" width="300px"  src="assets/meme-happy.png"/>
+                <img class="" style="transform: rotateY(180deg);" width="300px"  src="assets/meme-happy.png"/>
+              </div>
+            </div>
+          </section>
+        </section>
+        <section>
+          <section data-auto-animate>
+            <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878">
+              <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
+              <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+            </div>
+            <p>WTF is dis?</p>
+            <blockquote data-fragment-index="1" class="fragment" style="width: 800px;">
+              <q><span style="color: #4281e4; font-weight: 500;">Contract testing</span> is a methodology for ensuring that two separate systems (such as two microservices) are compatible and are able to communicate with one other.</q>
+            </blockquote>
+            <blockquote data-fragment-index="2" class="fragment" style="width: 800px;">
+              <q><span style="color: #4281e4; font-weight: 500;">Consumer driven contract testing</span> is a type of contract testing that ensures that a provider is compatible with the expectations that the consumer has of it.</q>
+            </blockquote>
+            <span data-fragment-index="2" class="fragment">More info <a href="https://pactflow.io/blog/what-is-contract-testing/">here</a></span>
+          </section>
+          <section data-auto-animate>
+            <style>
+              dt {
+                font-weight: bold;
+                text-decoration: underline;
+                color: steelblue;
+              }
+              dd {
+                margin: 0;
+                padding: 0 0 0.5em 0;
+              }
+            </style>
+            <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878">
+              <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
+              <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+            </div>
+            <p>Terminology</p>
+            <div class="r-stretch col" style="align-items: center;">
+              <div class="row" style="align-items: flex-start; justify-content: space-evenly;">
+                <div class="col fragment" style="padding-right: 20px;">
+                  <div style="text-transform: uppercase; font-size: 26px; text-align: left;color: steelblue;">Service consumer</div>
+                  <div style="font-size: 20px; padding:10px 20px 20px 0px; text-align: left;">A component that initiates an HTTP request to another component.</div>
+                </div>
+                <div class="col fragment" style="padding-right: 20px;">
+                  <div style="text-transform: uppercase; font-size: 26px; text-align: left;color: steelblue;">Service provider</div>
+                  <div style="font-size: 20px; padding:10px 20px 20px 0px; text-align: left;">A server that responds to an HTTP request from another component. Should be thought as the deployable unit.</div>
+                </div>
+                <div class="col fragment" style="padding-right: 20px;">
+                  <div style="text-transform: uppercase; font-size: 26px; text-align: left;color: steelblue;">Mock Service Provider</div>
+                  <div style="font-size: 18px; padding:10px 20px 20px 0px; text-align: left;">Used by tests in the consumer project to mock out the actual service provider, meaning that integration-like tests can be run without requiring the actual service provider to be available.</div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section data-auto-animate>
+            <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878">
+              <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
+              <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+            </div>
+            <p>Terminology</p>
+            <div class="row" style="justify-content: space-evenly; align-items: flex-start;">
+              <div class="col" style="align-items: center;">
+                <p style="text-transform: uppercase; color: steelblue;">Interaction</p>
+                <img src="assets/pact-interaction-state.png" width="200px"/>
+              </div>
+              <div class="col fragment" style="align-items: center;">
+                <p style="text-transform: uppercase; color: steelblue;">Pact</p>
+                <img src="assets/pact-complete.png" width="300px"/>
+              </div>
+            </div>
+            <span class="fragment">More info <a href=" https://docs.pact.io/getting_started/terminology">here</a></span>
+          </section>
+          <section data-auto-animate>
+            <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878">
+              <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
+              <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+            </div>
+            <p>Terminology</p>
+            <div class="row" style="justify-content: space-evenly; align-items: flex-start;">
+              <div class="col" style="align-items: center;">
+                <p style="color: steelblue">THE BROKER</p>
+                <img class="fragment" src="assets/pact-broker.png" width="600px"/>
+              </div>
+            </div>
+          </section>
+          <section data-auto-animate>
+            <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878">
+              <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
+              <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+            </div>
+            <p>The Flow</p>
+            <div class="row">
+              <div data-fragment-index="1" class="fragment fade-in-then-semi-out">Generate</div>
+              <div data-fragment-index="2" class="fragment fade-in-then-semi-out">Publish</div>
+              <div data-fragment-index="3" class="fragment fade-in-then-semi-out">Verify</div>
+            </div>
+            <div class="r-stack">
+              <img data-fragment-index="1" class="fragment" data-src="assets/pactflow-1.gif"/>
+              <img data-fragment-index="2" class="fragment" data-src="assets/pactflow-2.gif"/>
+              <img data-fragment-index="3" class="fragment" data-src="assets/pactflow-3.gif"/>
+            </div>
+          </section>
+        </section>
+        <section data-auto-animate>
+          <section data-auto-animate>
+            <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878">
+              <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
+              <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+            </div>
+            <p>The POC</p>
+            <img data-src="assets/netflis-logo.png"  width="400px" height="400px" style="border-radius: 50%;"/>
+            <img data-src="assets/hachebo-logo.png" width="400px" height="400px" style="border-radius: 50%;"/>
+          </section>
+          <section data-auto-animate class="fig-container" data-fig-id="fig-diagram1" data-file="diagram.html">
+            <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878">
+              <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
+              <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+            </div>
+            <p>Project structure</p>
+          </section>
+        </section>
+      </div>
+    </div>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
-
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        center:false,
+        hash: true,
+        // Learn about plugins: https://revealjs.com/plugins/
+        dependencies: [
+          { src: 'https://d3js.org/d3.v4.min.js' },
+          { src: 'plugin/d3js/d3js.js' },
+        ],
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+      });
+    </script>
+  </body>
 </html>

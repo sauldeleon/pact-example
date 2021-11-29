@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+  <style>
+
+    body {
+      width: 100%;
+      height: 100%;
+    }
+
+  </style>
+  <link rel="stylesheet" href="plugin/diagram/revealjs-diagram.css">
+</head>
+<body>
+  <script src="https://d3js.org/d3.v3.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="plugin/diagram/revealjs-diagram.js"></script>
+  <script>
+
+    var treeData = {
+      name: 'luis',
+      x0: 0,
+      y0: 0,
+      children: []
+    };
+
+    function addConsumers() {
+      window.diagram.addItem('Netflis', 'luis', treeData)();
+      window.diagram.addItem('Hachebo', 'luis', treeData)();
+    };
+
+    function removeConsumers() {
+      window.diagram.removeItem('Netflis', treeData)();
+      window.diagram.removeItem('Hachebo', treeData)();
+    }
+
+    function addApis() {
+      window.diagram.addItem('Movies-API', 'Netflis', treeData)();
+      window.diagram.addItem('TV-Shows-API', 'Netflis', treeData)();
+      window.diagram.addLink('Hachebo', 'Movies-API', treeData)();
+      window.diagram.addLink('Hachebo', 'TV-Shows-API', treeData)();
+    }
+
+    function removeApis() {
+      window.diagram.removeItem('Movies-API', treeData)();
+      window.diagram.removeItem('TV-Shows-API', treeData)();
+      window.diagram.removeLink('Hachebo', 'Movies-API', treeData)();
+      window.diagram.removeLink('Hachebo', 'TV-Shows-API', treeData)();
+    }
+
+    function addProviders() {
+      window.diagram.addItem('Duration-Provider', 'Movies-API', treeData)();
+      window.diagram.addLink('TV-Shows-API', 'Duration-Provider',  treeData)();
+    }
+
+    function removeProviders() {
+      window.diagram.removeItem('Duration-Provider', treeData)();
+      window.diagram.removeLink('TV-Shows-API', 'Duration-Provider',  treeData)();
+    }
+
+    var _transitions = [
+      addConsumers,
+      addApis,
+      addProviders,
+    ];
+
+    var _inverse_transitions = [
+      removeConsumers,
+      removeApis,
+      removeProviders
+    ];
+
+    // start the tree
+    window.diagram.register('basic', function() {
+      window.diagram.init(treeData);
+    });
+  </script>
+</body>
