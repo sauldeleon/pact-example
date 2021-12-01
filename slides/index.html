@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="dist/reset.css">
     <link rel="stylesheet" href="dist/reveal.css">
     <link rel="stylesheet" href="dist/theme/black.css">
+    <link rel="stylesheet" href="dist/all.min.css">
+    <link rel="stylesheet" href="plugin/chalkboard/style.css">
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
 
     <!-- Theme used for syntax highlighted code -->
     <link rel="stylesheet" href="plugin/highlight/monokai.css">
@@ -153,11 +156,20 @@
             <p>
               Special thanks to:
             </p>
-            <div class="r-stretch container">
-              <div class="col">
-                PAULA. David Martin por echar un cable con cosillas de python, Elena Sansigre y Javier Capilla por dejarme usar ratos del sprint para esto, Beatriz Gallego por ayuda con logos y diseños, Raúl González por confiarme esta presentacion, Jaime Sánchez por apretar en los sprints para llevar a cabo todo y mucho soporte moral
+              <div class="row">
+                <div class="col" style="height:469px;">
+                  <img data-fragment-index="3" class="fragment" src="assets/bea-design-logo.png" width="200px">
+                  <img data-fragment-index="5" class="fragment image-round" src="assets/product-manager.jpeg"  height="180px" width="180px">
+                </div>
+                <div class="col">
+                  <img data-fragment-index="6" class="fragment image-round" src="assets/calvin-hobbes_no-background.png" width="240px"/>
+                  <img data-fragment-index="2" class="fragment image-round" src="assets/raul-ciclista.png" width="300px">
+                </div>
+                <div class="col">
+                  <img data-fragment-index="4" class="fragment image-round" src="assets/jaime.png" width="300px">
+                  <img data-fragment-index="1" class="fragment image-round" src="assets/David-botella.png"  width="170px"/>
+                </div>
               </div>
-            </div>
           </section>
           <section data-auto-animate>
             <div class="row">
@@ -248,7 +260,7 @@
               </div>
             </div>
             <div class="col" style="align-items: center;">
-              <img class="fragment" height="200" width="500" style="border-radius: 5px"  src="assets/inevitability.gif"/>
+              <img height="200" width="500" style="border-radius: 5px"  src="assets/inevitability.gif"/>
               <img class="fragment" height="400" style="border-radius: 5px" src="assets/explosion-2.gif"/>
             </div>
           </section>
@@ -669,38 +681,43 @@
                 <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
               </div>
               <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <h1 data-id="pact-logo-text" style="font-size:15px">The POC</h1>
+                <h1 data-id="pact-logo-text" style="font-size:15px">Lets PACT</h1>
               </div>
             </div>
-            <h3>
-              <span>Generating pacts: </span>
-              <span>
-                <span style="color: #306998">Py</span><span style="color: #ffd43b">thon</span>
-              </span>
-            </h3>
-            <pre>
-              <code data-trim data-line-numbers="|6-14|16-17|19">
-                def test_get_duration(self):
-                    expected = {
-                        "id": 42,
-                        "duration_min": 192,
-                    }
-                    expected_pact = Like(expected)
-                
-                    pact.given(
-                        'Given a movie exists'
-                    ).upon_receiving(
-                        'a request for movies-api'
-                    ).with_request(
-                        'GET', '/duration/42'
-                    ).will_respond_with(200, body=expected_pact)
-                
-                    with pact:
-                        result = get_duration(42)
-                
-                    self.assertEqual(result, expected)
-              </code>
-            </pre>
+            <style>
+
+            </style>
+            <h3>Let's PACT <span class="bitches" >bitches</span></h3>
+            <div>
+              <ol>
+                <li data-fragment-index="1" class="fragment fade-in-then-semi-out">
+                  <span>Generate and publish </span>
+                  <img 
+                    src="assets/netflis-logo.png" 
+                    style="border-radius: 50%; display: inline-block; vertical-align: middle;"
+                    width="40px"/>
+                  <span> and </span>
+                  <img 
+                    src="assets/hachebo-logo.png"
+                    style="border-radius: 50%; border: 1px solid rgb(61, 59, 59); display: inline-block; vertical-align: middle;"
+                    width="40px"/>
+                  <span> PACTS</span>
+                </li>
+                <li data-fragment-index="2" class="fragment fade-in-then-semi-out">
+                  <span>Generate and publish </span>
+                  <span style="color:rgb(19, 179, 14)">TV shows API</span>
+                  <span> and </span>
+                  <span style="color:tomato">Movies API</span>
+                  <span> PACTS</span>
+                </li>
+                <li data-fragment-index="3" class="fragment fade-in-then-semi-out">Verify all PACTS</li>
+              </ol>
+              <div class="r-stack">
+                <img data-fragment-index="1" class="fragment" data-src="assets/poc-diagram.png"/>
+                <img data-fragment-index="2" class="fragment fade-in-then-out" data-src="assets/poc-diagram.png"/>
+                <img data-fragment-index="3"  class="fragment fade-in-then-out" data-src="assets/poc-diagram.png"/>
+              </div>
+            </div>
           </section>
           <section data-auto-animate>
             <div class="row">
@@ -712,16 +729,52 @@
                 <h1 data-id="pact-logo-text" style="font-size:15px">Lets PACT</h1>
               </div>
             </div>
-            <h3>Lets PACT</h3>
+            <h3>What if...</h3>
             <div>
               <ol>
-                <li class="fragment semi-fade-out strike">Generate Netflis and Hachebo PACTS</li>
-                <li class="fragment semi-fade-out strike">Publish Netflis and Hachebo PACTS</li>
-                <li class="fragment semi-fade-out strike">Generate TV shows API and Movies API PACTS</li>
-                <li class="fragment semi-fade-out strike">Publish TV shows API and Movies API PACTS</li>
-                <li class="fragment semi-fade-out strike">Verify all PACTS</li>
+                <li data-fragment-index="1" class="fragment fade-in-then-semi-out">
+                  Cambio la respuesta de la api(year)
+                </li>
+                <li data-fragment-index="2" class="fragment fade-in-then-semi-out">
+                  Cambio el contrato del consumidor
+                </li>
               </ol>
+              <div class="r-stack">
+                <img data-fragment-index="1" class="fragment" data-src="assets/poc-diagram.png"/>
+                <img data-fragment-index="2" class="fragment fade-in-then-semi-out" data-src="assets/poc-diagram.png"/>
+              </div>
             </div>
+          </section>
+        </section>
+        <section data-auto-animate>
+          <section data-auto-animate>
+            <div class="row">
+              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
+                <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
+                <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+              </div>
+              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
+                <h1 data-id="pact-logo-text" style="font-size:15px">Next steps</h1>
+              </div>
+            </div>
+            <h3>Next?</h3>
+            <div class="fragment">Tons of lof to SRE <i class="fragment fas fa-heart" style="font-size:100px;color: rgb(211, 0, 35);"></i>(we need a broker!)</div>
+            <div class="fragment">Start writting Pacts like there is no tumorrou</div>
+            <img class="fragment" src="assets/netflix-schema.jpeg" style="border-radius:50%;" width="400px" height="400px"/>
+          </section>
+        </section>
+        <section data-auto-animate>
+          <section data-auto-animate>
+            <div class="row">
+              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
+                <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
+                <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+              </div>
+              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
+                <h1 data-id="pact-logo-text" style="font-size:15px">Questions</h1>
+              </div>
+            </div>
+            <h3 style="display:flex; align-items: center; justify-content: center; height: 80%; font-size:150px" class="">Cuestions?</h3>
           </section>
         </section>
       </div>
@@ -733,6 +786,7 @@
     <script src="plugin/notes/notes.js"></script>
     <script src="plugin/markdown/markdown.js"></script>
     <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/chalkboard/plugin.js"></script>
     <script>
       // More info about initialization & config:
       // - https://revealjs.com/initialization/
@@ -744,8 +798,9 @@
         dependencies: [
           { src: 'https://d3js.org/d3.v4.min.js' },
           { src: 'plugin/d3js/d3js.js' },
+          { src: 'plugin/animated/plugin.js', async: true }
         ],
-        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealChalkboard ],
       });
     </script>
   </body>
