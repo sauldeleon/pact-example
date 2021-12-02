@@ -1,6 +1,5 @@
 import TvShowsService from './tvShows.service'
 import * as Pact from '@pact-foundation/pact'
-import TvShow from '../tvShow'
 
 describe('TvShowService API', () => {
   const tvShowsService = new TvShowsService('http://localhost', global.tvShowsPort)

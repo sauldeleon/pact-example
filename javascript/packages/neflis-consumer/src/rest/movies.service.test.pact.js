@@ -1,6 +1,5 @@
 import MovieService from './movies.service'
 import * as Pact from '@pact-foundation/pact'
-import Movie from '../movie'
 
 describe('MovieService API', () => {
   const movieService = new MovieService('http://localhost', global.moviesPort)
