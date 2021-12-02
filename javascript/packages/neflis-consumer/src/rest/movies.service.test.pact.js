@@ -32,8 +32,8 @@ describe('MovieService API', () => {
             body: Pact.Matchers.somethingLike({
               id: 42,
               name: 'The Silence of the Lambs',
-              genre: 'Jonathan Demme',
-              director: 'Terror'
+              director: 'Jonathan Demme',
+              genre: 'Terror'
             }),
           },
         })
@@ -81,8 +81,8 @@ describe('MovieService API', () => {
             body: Pact.Matchers.somethingLike({
               id: 42,
               name: 'The Silence of the Lambs',
-              genre: 'Jonathan Demme',
-              director: 'Terror'
+              genre: 'Terror',
+              director: 'Jonathan Demme'
             }),
           },
         })
