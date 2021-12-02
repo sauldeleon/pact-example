@@ -1,6 +1,5 @@
 import MovieService from './movies.service'
 import * as Pact from '@pact-foundation/pact'
-import Movie from '../movie'
 
 describe('MovieService API', () => {
   const movieService = new MovieService('http://localhost', global.moviesPort)
@@ -98,7 +97,13 @@ describe('MovieService API', () => {
 
     it('sends a request according to contract', done => {
       movieService
-        .createMovie(new Movie('The Silence of the Lambs', 'Jonathan Demme', 'Terror',  1991, 192))
+        .createMovie({
+          name: 'The Silence of the Lambs',
+          genre: 'Terror',
+          director: 'Jonathan Demme',
+          year: 1991,
+          duration: 192,
+        })
         .then(movie => expect(movie.year).toEqual(1991))
         .then(() =>
           global.moviesProvider.verify().then(
