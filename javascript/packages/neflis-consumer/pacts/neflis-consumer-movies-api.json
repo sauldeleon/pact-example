@@ -30,8 +30,8 @@
         "body": {
           "id": 42,
           "name": "The Silence of the Lambs",
-          "genre": "Jonathan Demme",
-          "director": "Terror"
+          "director": "Jonathan Demme",
+          "genre": "Terror"
         },
         "matchingRules": {
           "$.headers.Content-Type": {
@@ -78,8 +78,8 @@
         "body": {
           "id": 42,
           "name": "The Silence of the Lambs",
-          "genre": "Jonathan Demme",
-          "director": "Terror"
+          "genre": "Terror",
+          "director": "Jonathan Demme"
         },
         "matchingRules": {
           "$.headers.Content-Type": {
