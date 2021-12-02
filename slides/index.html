@@ -89,11 +89,12 @@
               <p style="font-size: 100px; margin: 50px 0px 100px 0px;">
                 <img src="assets/disclaimer-icon.png" width="90px" style="margin:0px;display: inline-block;vertical-align: middle;padding-bottom: 13px;"/>
                 <span>Disclaimer!</span>
+                <img src="assets/subodrilo.png"  width="110px" style="margin:0px;display: inline-block;vertical-align: middle;padding-bottom: 13px;"/>
               </p>
               <p class="r-fit-text">
                 All characters, corporations or establishments and memes appearing in this tech talk are fictitious. Any resemblance to real persons(living or <b style="color: red;">dead</b>) or companies is purely coincidental.<br/><br/>
                 Several developers were harmed during the making of this presentation.<br/><br/>
-                The displayed memes may have nothing to do with the slide they belong to. And we are proud of it.
+                The displayed memes may have nothing to do with the slide they belong to. Deal with it.
               </p>
             </div>
           </section>
@@ -230,6 +231,7 @@
                 font-size: 30px;
                 width: auto;
                 height: 50px;
+                border-radius: 20px;
               }
             </style>
             <div class="row">
@@ -417,8 +419,19 @@
                 <h1 data-id="pact-logo-text" style="font-size:15px">Concepts</h1>
               </div>
             </div>
+            <style>
+              .reveal .slides section .fragment.dissapear {
+                opacity: 1;
+                visibility: visible;
+              }
+
+              .fragment.dissapear.visible {
+                display: none;
+              }
+            </style>
             <p>WTF is dis?</p>
-            <blockquote data-fragment-index="1" class="fragment" style="width: 800px;">
+            <img src="assets/negro-sonrie-pc.jpg" data-fragment-index="1" width="500px" class="fragment dissapear"/>
+            <blockquote data-fragment-index="1" class="fragment fade-in" style="width: 800px;">
               <q><span style="color: #4281e4; font-weight: 500;">Contract testing</span> is a methodology for ensuring that two separate systems (such as two microservices) are compatible and are able to communicate with one other.</q>
             </blockquote>
             <blockquote data-fragment-index="2" class="fragment" style="width: 800px;">
@@ -516,6 +529,19 @@
               <img data-fragment-index="2" class="fragment" data-src="assets/pactflow-2.gif"/>
               <img data-fragment-index="3" class="fragment" data-src="assets/pactflow-3.gif"/>
             </div>
+          </section>
+          <section data-auto-animate>
+            <div class="row">
+              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
+                <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
+                <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+              </div>
+              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
+                <h1 data-id="pact-logo-text" style="font-size:15px">Concepts</h1>
+              </div>
+            </div>
+            <p>That's it</p>
+            <img src="assets/face-shrink.gif" width="500px"/>
           </section>
         </section>
         <section data-auto-animate>
