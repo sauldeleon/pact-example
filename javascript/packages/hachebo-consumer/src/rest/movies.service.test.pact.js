@@ -30,9 +30,14 @@ describe('MovieService API', () => {
             headers: {
               'Content-Type': contentTypeJsonMatcher,
             },
-            body: Pact.Matchers.somethingLike(
-              new Movie('The Silence of the Lambs', 'Terror', 'Jonathan Demme', 1991, 192, 42),
-            ),
+            body: Pact.Matchers.somethingLike({
+              id: 42,
+              name: 'The Silence of the Lambs',
+              genre: 'Terror',
+              director: 'Jonathan Demme',
+              year: 1991,
+              duration: 192,
+            }),
           },
         })
         .then(() => done())
@@ -65,16 +70,27 @@ describe('MovieService API', () => {
               Accept: contentTypeJsonMatcher,
               'Content-Type': contentTypeJsonMatcher,
             },
-            body: new Movie('The Silence of the Lambs', 'Terror', 'Jonathan Demme', 1991, 192),
+            body: {
+              name: 'The Silence of the Lambs',
+              genre: 'Terror',
+              director: 'Jonathan Demme',
+              year: 1991,
+              duration: 192,
+            },
           },
           willRespondWith: {
             status: 201,
             headers: {
               'Content-Type': contentTypeJsonMatcher,
             },
-            body: Pact.Matchers.somethingLike(
-              new Movie('The Silence of the Lambs', 'Terror', 'Jonathan Demme', 1991, 192, 42),
-            ),
+            body: Pact.Matchers.somethingLike({
+                id:42,
+                name: 'The Silence of the Lambs',
+                genre: 'Terror',
+                director: 'Jonathan Demme',
+                year: 1991,
+                duration: 192,
+              }),
           },
         })
         .then(() => done())
@@ -82,7 +98,7 @@ describe('MovieService API', () => {
 
     it('sends a request according to contract', done => {
       movieService
-        .createMovie(new Movie('The Silence of the Lambs', 'Terror', 'Jonathan Demme', 1991, 192, 42))
+        .createMovie(new Movie('The Silence of the Lambs', 'Jonathan Demme', 'Terror',  1991, 192))
         .then(movie => expect(movie.year).toEqual(1991))
         .then(() =>
           global.moviesProvider.verify().then(

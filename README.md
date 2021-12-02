@@ -10,7 +10,7 @@
 
 - Go to `pact-broker` folder
 - Create `broker.env` and `database.env` files based on sample files in the same folder. Have in mind that the same values should be applied to both files or the app won't connect with the database
-- In order to use `https` you have to add your ssl certificate, generate `pact_cert.pem` and `pact_cert.key` files and push them into `packages/pact-broker/ssl/cert` folder. If you want custom names, override `packages/pact-broker/ssl/nginx.conf` file, lines 16 and 17, with your custom names. Use the following command to generate the certificates.
+- In order to use `https` you have to add your ssl certificate, generate `pact_cert.pem` and `pact_cert.key` files and push them into `packages/pact-broker/ssl/cert` folder. Uncomment the SSL section of [Nginx Configuration file](./pact-broker/ssl/nginx.conf) and set your desired configuration, lines 16 and 17, with your custom certificate paths. Use the following command to generate the certificates.
 
   ```bash
   openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout pact_cert.key -out pact_cert.pem

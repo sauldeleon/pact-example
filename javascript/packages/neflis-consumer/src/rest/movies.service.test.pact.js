@@ -30,7 +30,12 @@ describe('MovieService API', () => {
             headers: {
               'Content-Type': contentTypeJsonMatcher,
             },
-            body: Pact.Matchers.somethingLike(new Movie('The Silence of the Lambs', 'Terror', 'Jonathan Demme', 42)),
+            body: Pact.Matchers.somethingLike({
+              id: 42,
+              name: 'The Silence of the Lambs',
+              genre: 'Jonathan Demme',
+              director: 'Terror'
+            }),
           },
         })
         .then(() => done())
@@ -63,14 +68,23 @@ describe('MovieService API', () => {
               Accept: contentTypeJsonMatcher,
               'Content-Type': contentTypeJsonMatcher,
             },
-            body: new Movie('The Silence of the Lambs', 'Jonathan Demme', 'Terror'),
+            body: {
+              name: 'The Silence of the Lambs',
+              genre: 'Terror',
+              director: 'Jonathan Demme'
+            },
           },
           willRespondWith: {
             status: 201,
             headers: {
               'Content-Type': contentTypeJsonMatcher,
             },
-            body: Pact.Matchers.somethingLike(new Movie('The Silence of the Lambs', 'Jonathan Demme', 'Terror', 42)),
+            body: Pact.Matchers.somethingLike({
+              id: 42,
+              name: 'The Silence of the Lambs',
+              genre: 'Jonathan Demme',
+              director: 'Terror'
+            }),
           },
         })
         .then(() => done())
@@ -78,7 +92,11 @@ describe('MovieService API', () => {
 
     it('sends a request according to contract', done => {
       movieService
-        .createMovie(new Movie('The Silence of the Lambs', 'Jonathan Demme', 'Terror'))
+        .createMovie({
+          name: 'The Silence of the Lambs',
+          genre: 'Terror',
+          director: 'Jonathan Demme'
+        })
         .then(movie => expect(movie.id).toEqual(42))
         .then(() =>
           global.moviesProvider.verify().then(

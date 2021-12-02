@@ -30,7 +30,13 @@ describe('TvShowService API', () => {
             headers: {
               'Content-Type': contentTypeJsonMatcher,
             },
-            body: Pact.Matchers.somethingLike(new TvShow('Friends', 'David Crane, Marta Kauffman', 'Humor', 10, 42)),
+            body: Pact.Matchers.somethingLike({
+              id: 42,
+              name: 'Friends',
+              director: 'David Crane, Marta Kauffman',
+              genre: 'Humor',
+              seasons: 10
+            }),
           },
         })
         .then(() => done())
@@ -63,14 +69,25 @@ describe('TvShowService API', () => {
               Accept: contentTypeJsonMatcher,
               'Content-Type': contentTypeJsonMatcher,
             },
-            body: new TvShow('Friends', 'David Crane, Marta Kauffman', 'Humor', 10),
+            body: {
+              name: 'Friends',
+              director: 'David Crane, Marta Kauffman',
+              genre: 'Humor',
+              seasons: 10
+            },
           },
           willRespondWith: {
             status: 201,
             headers: {
               'Content-Type': contentTypeJsonMatcher,
             },
-            body: Pact.Matchers.somethingLike(new TvShow('Friends', 'David Crane, Marta Kauffman', 'Humor', 10, 42)),
+            body: Pact.Matchers.somethingLike({
+              id: 42,
+              name: 'Friends',
+              director: 'David Crane, Marta Kauffman',
+              genre: 'Humor',
+              seasons: 10
+            }),
           },
         })
         .then(() => done())
@@ -78,7 +95,12 @@ describe('TvShowService API', () => {
 
     it('sends a request according to contract', done => {
       tvShowsService
-        .createTvShow(new TvShow('Friends', 'David Crane, Marta Kauffman', 'Humor', 10))
+        .createTvShow({
+          name: 'Friends',
+          director: 'David Crane, Marta Kauffman',
+          genre: 'Humor',
+          seasons: 10
+        })
         .then(tvShow => expect(tvShow.id).toEqual(42))
         .then(() =>
           global.tvShowsProvider.verify().then(

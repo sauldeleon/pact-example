@@ -30,9 +30,14 @@ describe('TvShowService API', () => {
             headers: {
               'Content-Type': contentTypeJsonMatcher,
             },
-            body: Pact.Matchers.somethingLike(
-              new TvShow('Friends', 'David Crane, Marta Kauffman', 'Humor', 10, 1994, 42),
-            ),
+            body: Pact.Matchers.somethingLike({
+              id: 42,
+              name: 'Friends',
+              genre: 'Humor',
+              director: 'David Crane, Marta Kauffman',
+              seasons: 10,
+              year: 1994
+            }),
           },
         })
         .then(() => done())
@@ -65,16 +70,27 @@ describe('TvShowService API', () => {
               Accept: contentTypeJsonMatcher,
               'Content-Type': contentTypeJsonMatcher,
             },
-            body: new TvShow('Friends', 'David Crane, Marta Kauffman', 'Humor', 10, 1994),
+            body: {
+              name: 'Friends',
+              genre: 'Humor',
+              director: 'David Crane, Marta Kauffman',
+              seasons: 10,
+              year: 1994
+            },
           },
           willRespondWith: {
             status: 201,
             headers: {
               'Content-Type': contentTypeJsonMatcher,
             },
-            body: Pact.Matchers.somethingLike(
-              new TvShow('Friends', 'David Crane, Marta Kauffman', 'Humor', 10, 1994, 42),
-            ),
+            body: Pact.Matchers.somethingLike({
+              id: 42,
+              name: 'Friends',
+              genre: 'Humor',
+              director: 'David Crane, Marta Kauffman',
+              seasons: 10,
+              year: 1994
+            }),
           },
         })
         .then(() => done())
