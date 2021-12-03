@@ -887,6 +887,24 @@
         </section>
         <section data-auto-animate>
           <section data-auto-animate>
+            <style>
+              ul.check-list {
+                list-style: none;
+                padding: 0;
+              }
+              ul.check-list li {
+                padding-left: 1.3em;
+                margin-top:20px;
+              }
+              ul.check-list li:before {
+                content: "\f00c"; /* FontAwesome Unicode */
+                font-family: 'Font Awesome\ 5 Free';
+                font-weight: 900;
+                display: inline-block;
+                margin-left: -1.3em; /* same as padding-left set on li */
+                width: 1.3em; /* same as padding-left set on li */
+              }
+            </style>
             <div class="row">
               <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
                 <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
@@ -897,9 +915,18 @@
               </div>
             </div>
             <h3>Next?</h3>
-            <div class="fragment">Tons of lof to SRE <i class="fragment fas fa-heart" style="font-size:100px;color: rgb(211, 0, 35);"></i>(we need a broker!)</div>
-            <div class="fragment">Start writting Pacts like there is no tumorrou</div>
-            <img class="fragment" src="assets/netflix-schema.jpeg" style="border-radius:50%;" width="400px" height="400px"/>
+            <ul class="check-list">
+              <li class="fragment">
+                <span>Tons of lof to SRE <i class="fragment fas fa-heart" style="font-size:100px;color: rgb(211, 0, 35);"></i>(we need a broker!)</span>
+              </li>
+              <li class="fragment">
+                <span>Decide our workflow</span>
+              </li>
+              <li class="fragment">
+                <span>Start writting Pacts like there is no tumorrou</span>
+              </li>
+            </ul>
+            <img class="fragment" src="assets/netflix-schema.jpeg" style="border-radius:50%;" width="275px" height="275px"/>
           </section>
         </section>
         <section data-auto-animate>
