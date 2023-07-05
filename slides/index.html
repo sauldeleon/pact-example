@@ -1,38 +1,59 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
 
     <title>PACT 101</title>
-    
-    <link rel="stylesheet" href="dist/custom.css">
-    <link rel="stylesheet" href="dist/reset.css">
-    <link rel="stylesheet" href="dist/reveal.css">
-    <link rel="stylesheet" href="dist/theme/black.css">
-    <link rel="stylesheet" href="dist/all.min.css">
-    <link rel="stylesheet" href="plugin/chalkboard/style.css">
-    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+    <link rel="stylesheet" href="dist/custom.css" />
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" />
+    <link rel="stylesheet" href="dist/all.min.css" />
+    <link rel="stylesheet" href="plugin/chalkboard/style.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css" />
 
     <!-- Theme used for syntax highlighted code -->
-    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
         <section>
-          <div class="col" style="width:100%; justify-content: center;">
-            <div class="row" style="width:800px; margin:50px auto; padding:0px 30px; border:5px solid white; border-radius: 40px; box-shadow: 0px 0px 10px 0px #787878">
-              <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" src="assets/pact-logo-icon_white.png" width="200px" style="margin:5px 0;"/>
-              <h1 data-id="pact-logo-text" style="font-size:140px">PACT 101</h1>
+          <div class="col" style="width: 100%; justify-content: center">
+            <div
+              class="row"
+              style="
+                width: 800px;
+                margin: 50px auto;
+                padding: 0px 30px;
+                border: 5px solid white;
+                border-radius: 40px;
+                box-shadow: 0px 0px 10px 0px #787878;
+              "
+            >
+              <img
+                data-id="pact-logo-image"
+                data-src="assets/pact-logo-icon_white.png"
+                src="assets/pact-logo-icon_white.png"
+                width="200px"
+                style="margin: 5px 0"
+              />
+              <h1 data-id="pact-logo-text" style="font-size: 140px">
+                PACT 101
+              </h1>
             </div>
             <div data-id="content" class="col">
               <h2 class="r-fit-text">We will start in...</h2>
-              <div class="row" style="justify-content: space-evenly;">
+              <div class="row" style="justify-content: space-evenly">
                 <h4 id="days"></h4>
                 <h4 id="hours"></h4>
                 <h4 id="mins"></h4>
-                <h4 id="secs" style="margin: var(--r-heading-margin);"></h4>
+                <h4 id="secs" style="margin: var(--r-heading-margin)"></h4>
               </div>
               <div class="row">
                 <h4 class="col" id="end"></h4>
@@ -43,33 +64,36 @@
           <script>
             // The data/time we want to countdown to
             var countDownDate = new Date("Dec 03, 2021 13:03:00").getTime();
-        
+
             // Run myfunc every second
-            var myfunc = setInterval(function() {
-        
+            var myfunc = setInterval(function () {
               var now = new Date().getTime();
               var timeleft = countDownDate - now;
-                  
+
               // Calculating the days, hours, minutes and seconds left
               var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
-              var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-              var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+              var hours = Math.floor(
+                (timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+              );
+              var minutes = Math.floor(
+                (timeleft % (1000 * 60 * 60)) / (1000 * 60)
+              );
               var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
-                  
+
               // Result is output to the specific element
-              document.getElementById("days").innerHTML = days + "d&nbsp;"
-              document.getElementById("hours").innerHTML = hours + "h&nbsp;" 
-              document.getElementById("mins").innerHTML = minutes + "m&nbsp;" 
-              document.getElementById("secs").innerHTML = seconds + "s&nbsp;" 
-                
+              document.getElementById("days").innerHTML = days + "d&nbsp;";
+              document.getElementById("hours").innerHTML = hours + "h&nbsp;";
+              document.getElementById("mins").innerHTML = minutes + "m&nbsp;";
+              document.getElementById("secs").innerHTML = seconds + "s&nbsp;";
+
               // Display the message when countdown is over
               if (timeleft < 0) {
-                  clearInterval(myfunc);
-                  document.getElementById("days").innerHTML = ""
-                  document.getElementById("hours").innerHTML = "" 
-                  document.getElementById("mins").innerHTML = ""
-                  document.getElementById("secs").innerHTML = ""
-                  document.getElementById("end").innerHTML = "LET'S GO BITCHES!!";
+                clearInterval(myfunc);
+                document.getElementById("days").innerHTML = "";
+                document.getElementById("hours").innerHTML = "";
+                document.getElementById("mins").innerHTML = "";
+                document.getElementById("secs").innerHTML = "";
+                document.getElementById("end").innerHTML = "LET'S GO BITCHES!!";
               }
             }, 1000);
           </script>
@@ -77,157 +101,375 @@
         <section>
           <section data-auto-animate>
             <div class="row">
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
-                <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <img
+                  data-id="pact-logo-image"
+                  data-src="assets/pact-logo-icon_white.png"
+                  width="20px"
+                  style="margin: 5px 0"
+                />
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  PACT 101
+                </h1>
               </div>
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <h1 data-id="pact-logo-text" style="font-size:15px">Intro</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <h1 data-id="pact-logo-text" style="font-size: 15px">Intro</h1>
               </div>
             </div>
-            <div data-id="content" class="col" style="height:100%; justify-content: flex-start;">
-              <p style="font-size: 100px; margin: 50px 0px 100px 0px;">
-                <img src="assets/disclaimer-icon.png" width="90px" style="margin:0px;display: inline-block;vertical-align: middle;padding-bottom: 13px;"/>
+            <div
+              data-id="content"
+              class="col"
+              style="height: 100%; justify-content: flex-start"
+            >
+              <p style="font-size: 100px; margin: 50px 0px 100px 0px">
+                <img
+                  src="assets/disclaimer-icon.png"
+                  width="90px"
+                  style="
+                    margin: 0px;
+                    display: inline-block;
+                    vertical-align: middle;
+                    padding-bottom: 13px;
+                  "
+                />
                 <span>Disclaimer!</span>
-                <img src="assets/subodrilo.png"  width="110px" style="margin:0px;display: inline-block;vertical-align: middle;padding-bottom: 13px;"/>
+                <img
+                  src="assets/subodrilo.png"
+                  width="110px"
+                  style="
+                    margin: 0px;
+                    display: inline-block;
+                    vertical-align: middle;
+                    padding-bottom: 13px;
+                  "
+                />
               </p>
               <p class="r-fit-text">
-                All characters, corporations or establishments and memes appearing in this tech talk are fictitious. Any resemblance to real persons(living or <b style="color: red;">dead</b>) or companies is purely coincidental.<br/><br/>
-                Several developers were harmed during the making of this presentation.<br/><br/>
-                The displayed memes may have nothing to do with the slide they belong to. Deal with it.
+                All characters, corporations or establishments and memes
+                appearing in this tech talk are fictitious. Any resemblance to
+                real persons(living or <b style="color: red">dead</b>) or
+                companies is purely coincidental.<br /><br />
+                Several developers were harmed during the making of this
+                presentation.<br /><br />
+                The displayed memes may have nothing to do with the slide they
+                belong to. Deal with it.
               </p>
             </div>
           </section>
           <section data-auto-animate>
             <div class="row">
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
-                <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <img
+                  data-id="pact-logo-image"
+                  data-src="assets/pact-logo-icon_white.png"
+                  width="20px"
+                  style="margin: 5px 0"
+                />
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  PACT 101
+                </h1>
               </div>
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <h1 data-id="pact-logo-text" style="font-size:15px">Intro</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <h1 data-id="pact-logo-text" style="font-size: 15px">Intro</h1>
               </div>
             </div>
-            <p class="r-fit-text">
-              Welcome!
-            </p>
+            <p class="r-fit-text">Welcome!</p>
           </section>
           <section data-auto-animate>
             <div class="row">
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
-                <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <img
+                  data-id="pact-logo-image"
+                  data-src="assets/pact-logo-icon_white.png"
+                  width="20px"
+                  style="margin: 5px 0"
+                />
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  PACT 101
+                </h1>
               </div>
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <h1 data-id="pact-logo-text" style="font-size:15px">Intro</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <h1 data-id="pact-logo-text" style="font-size: 15px">Intro</h1>
               </div>
             </div>
-            <p style="font-size: 60px;">
-              Welcome!
-            </p>
-            <div class="r-stretch col" style="margin-bottom:40px">
-              <div data-fragment-index="1" class="row fragment semi-fade-out" style="flex:1;">
-                <div style="font-size: 70px;">The guat:</div>
-                <div style="font-size: 25px;">Explain a way to improve our test workflow accross applications</div>
-              </div>
-              <div data-fragment-index="1" class="row fragment fade-in" style="flex:1; ">
-                <div data-fragment-index="2" class="row fragment semi-fade-out" >
-                  <div style="font-size: 70px;">The guai:</div>
-                  <div style="font-size: 25px;">We are facing issues due to improvements of our APIs</div>
+            <p style="font-size: 60px">Welcome!</p>
+            <div class="r-stretch col" style="margin-bottom: 40px">
+              <div
+                data-fragment-index="1"
+                class="row fragment semi-fade-out"
+                style="flex: 1"
+              >
+                <div style="font-size: 50px">The what:</div>
+                <div style="font-size: 25px">
+                  Explain a way to improve our test workflow accross
+                  applications
                 </div>
               </div>
-              <div data-fragment-index="2" class="row fragment fade-in" style="flex:1">
-                <div style="font-size: 70px; ">The ju:</div>
+              <div
+                data-fragment-index="1"
+                class="row fragment fade-in"
+                style="flex: 1"
+              >
+                <div data-fragment-index="2" class="row fragment semi-fade-out">
+                  <div style="font-size: 50px">The why:</div>
+                  <div style="font-size: 25px">
+                    We are facing issues due to improvements of our APIs
+                  </div>
+                </div>
+              </div>
+              <div
+                data-fragment-index="2"
+                class="row fragment fade-in"
+                style="flex: 1"
+              >
+                <div style="font-size: 50px">The who:</div>
                 <div class="">
-                  <img class="fragment fade-right" data-src="assets/miguel.png" height="180px" style="margin:0; border-radius: 50%;"/>
-                  <img class="fragment fade-up" data-src="assets/valerio.png" height="180px" style="margin:0; border-radius: 50%; margin-left:40px;"/>
-                  <img class="fragment fade-left" data-src="assets/saul.png" height="180px" style="margin:0; border-radius: 50%;margin-left:40px;"/>
+                  <img
+                    class="fragment fade-up"
+                    data-src="assets/valerio.png"
+                    height="180px"
+                    style="margin: 0; border-radius: 50%; margin-left: 40px"
+                  />
+                  <img
+                    class="fragment fade-left"
+                    data-src="assets/saul.png"
+                    height="180px"
+                    style="margin: 0; border-radius: 50%; margin-left: 40px"
+                  />
                 </div>
               </div>
             </div>
           </section>
           <section data-auto-animate>
             <div class="row">
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
-                <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <img
+                  data-id="pact-logo-image"
+                  data-src="assets/pact-logo-icon_white.png"
+                  width="20px"
+                  style="margin: 5px 0"
+                />
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  PACT 101
+                </h1>
               </div>
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <h1 data-id="pact-logo-text" style="font-size:15px">Intro</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <h1 data-id="pact-logo-text" style="font-size: 15px">Intro</h1>
               </div>
             </div>
-            <p>
-              Special thanks to:
-            </p>
-              <div class="row">
-                <div class="col" style="height:469px;">
-                  <img data-fragment-index="3" class="fragment" src="assets/bea-design-logo.png" width="200px">
-                  <img data-fragment-index="5" class="fragment image-round" src="assets/product-manager.jpeg"  height="180px" width="180px">
-                </div>
-                <div class="col">
-                  <img data-fragment-index="6" class="fragment image-round" src="assets/paula.jpeg" width="240px"/>
-                  <img data-fragment-index="2" class="fragment image-round" src="assets/raul-ciclista.png" width="300px">
-                </div>
-                <div class="col">
-                  <img data-fragment-index="4" class="fragment image-round" src="assets/jaime.png" width="300px">
-                  <img data-fragment-index="1" class="fragment image-round" src="assets/David-botella.png"  width="170px"/>
-                </div>
-              </div>
-          </section>
-          <section data-auto-animate>
-            <div class="row">
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
-                <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
-              </div>
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <h1 data-id="pact-logo-text" style="font-size:15px">Intro</h1>
-              </div>
-            </div>
-            <p style="font-size: 80px; margin: 50px 0px 100px 0px;">
-              <img src="assets/roadmap-icon.png" width="70px" style="margin:0 20px; display: inline-block;vertical-align: middle; padding-bottom: 13px;"/>
+            <p style="font-size: 80px; margin: 50px 0px 100px 0px">
+              <img
+                src="assets/roadmap-icon.png"
+                width="70px"
+                style="
+                  margin: 0 20px;
+                  display: inline-block;
+                  vertical-align: middle;
+                  padding-bottom: 13px;
+                "
+              />
               <span>Roadmap</span>
             </p>
-            <div class="r-stretch col" style="margin:30px">
+            <div class="r-stretch col" style="margin: 30px">
               <ol>
-                <li class="fragment fade-in-then-semi-out" style="margin-bottom: 20px;">A common history. Use case and current problems.</li>
-                <li class="fragment fade-in-then-semi-out" style="margin-bottom: 20px;">PACT main concepts. <img src="assets/AreYouKiddingMe.png"  width="40px" style="margin:0"/></li>
-                <li class="fragment fade-in-then-semi-out" style="margin-bottom: 20px;">POC</li>
-                <li class="fragment fade-in-then-semi-out" style="margin-bottom: 20px;">Next steps</li>
+                <li
+                  class="fragment fade-in-then-semi-out"
+                  style="margin-bottom: 20px"
+                >
+                  A common history. Use case and current problems.
+                </li>
+                <li
+                  class="fragment fade-in-then-semi-out"
+                  style="margin-bottom: 20px"
+                >
+                  PACT main concepts.
+                  <img
+                    src="assets/AreYouKiddingMe.png"
+                    width="40px"
+                    style="margin: 0"
+                  />
+                </li>
+                <li
+                  class="fragment fade-in-then-semi-out"
+                  style="margin-bottom: 20px"
+                >
+                  POC
+                </li>
+                <li
+                  class="fragment fade-in-then-semi-out"
+                  style="margin-bottom: 20px"
+                >
+                  Next steps
+                </li>
                 <li class="fragment fade-in">Forum. Questions.</li>
-              </ol>	
+              </ol>
             </div>
           </section>
         </section>
         <section>
           <section data-auto-animate>
             <div class="row">
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
-                <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <img
+                  data-id="pact-logo-image"
+                  data-src="assets/pact-logo-icon_white.png"
+                  width="20px"
+                  style="margin: 5px 0"
+                />
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  PACT 101
+                </h1>
               </div>
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <h1 data-id="pact-logo-text" style="font-size:15px">The Problem</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  The Problem
+                </h1>
               </div>
             </div>
-            <p style="font-size: 60px; margin: 50px 0px;">
-              A small history...
-            </p>
-            <div class="row" style="justify-content: space-evenly;">
-              <div class="fragment fade-right" style="font-size: 30px; margin: 50px 0px 100px 0px;">
+            <p style="font-size: 60px; margin: 50px 0px">A small history...</p>
+            <div class="row" style="justify-content: space-evenly">
+              <div
+                class="fragment fade-right"
+                style="font-size: 30px; margin: 50px 0px 100px 0px"
+              >
                 <p>The Dev 1</p>
-                <img class="centered-and-cropped" width="200" height="200" style="border-radius:50%" src="assets/consumer.jpeg"/>
+                <img
+                  class="centered-and-cropped"
+                  width="200"
+                  height="200"
+                  style="border-radius: 50%"
+                  src="assets/consumer.jpeg"
+                />
               </div>
-              <div class="fragment fade-left" style="font-size: 30px; margin: 50px 0px 100px 0px;">
+              <div
+                class="fragment fade-left"
+                style="font-size: 30px; margin: 50px 0px 100px 0px"
+              >
                 <p>The Dev 2</p>
-                <img class="centered-and-cropped" width="200" height="200" style="border-radius:50%" src="assets/provider.jpeg" />
+                <img
+                  class="centered-and-cropped"
+                  width="200"
+                  height="200"
+                  style="border-radius: 50%"
+                  src="assets/provider.jpeg"
+                />
               </div>
             </div>
           </section>
           <section data-auto-animate>
             <style>
               blockquote.chat {
-                margin:0;
+                margin: 0;
                 font-size: 30px;
                 width: auto;
                 height: 50px;
@@ -235,123 +477,407 @@
               }
             </style>
             <div class="row">
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
-                <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <img
+                  data-id="pact-logo-image"
+                  data-src="assets/pact-logo-icon_white.png"
+                  width="20px"
+                  style="margin: 5px 0"
+                />
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  PACT 101
+                </h1>
               </div>
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <h1 data-id="pact-logo-text" style="font-size:15px">The Problem</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  The Problem
+                </h1>
               </div>
             </div>
-            <p style="font-size: 50px; margin: 20px 0px;">
-              I promise...
-            </p>
-            <div class="row fragment" style="justify-content: flex-end; align-items: center;">
+            <p style="font-size: 50px; margin: 20px 0px">I promise...</p>
+            <div
+              class="row fragment"
+              style="justify-content: flex-end; align-items: center"
+            >
               <blockquote class="chat">
-                <q>I will never change this... My <b style="color:steelblue">***</b> has the best quality</q>
+                <q
+                  >I will never change this... My
+                  <b style="color: steelblue">***</b> has the best quality</q
+                >
               </blockquote>
-              <img class="centered-and-cropped" width="50" height="50" style="border-radius:50%;margin:0 0 0 10px" src="assets/provider.jpeg" />
+              <img
+                class="centered-and-cropped"
+                width="50"
+                height="50"
+                style="border-radius: 50%; margin: 0 0 0 10px"
+                src="assets/provider.jpeg"
+              />
             </div>
-            <div class="row fragment" style="justify-content: flex-start; align-items: center;margin:10px 0 0 0">
-              <img class="centered-and-cropped" width="50" height="50" style="border-radius:50%;margin:0 10px 0 0" src="assets/consumer.jpeg" />
-              <blockquote class="chat" >
+            <div
+              class="row fragment"
+              style="
+                justify-content: flex-start;
+                align-items: center;
+                margin: 10px 0 0 0;
+              "
+            >
+              <img
+                class="centered-and-cropped"
+                width="50"
+                height="50"
+                style="border-radius: 50%; margin: 0 10px 0 0"
+                src="assets/consumer.jpeg"
+              />
+              <blockquote class="chat">
                 <q>... are you sure bro?</q>
               </blockquote>
             </div>
-            <div class="row fragment" style="justify-content: flex-end; align-items: center; margin: 10px 0 0 0">
+            <div
+              class="row fragment"
+              style="
+                justify-content: flex-end;
+                align-items: center;
+                margin: 10px 0 0 0;
+              "
+            >
               <blockquote class="chat">
-                <q>... and if it changes, don't worry I'll keep you posted ...</q>
+                <q
+                  >... and if it changes, don't worry I'll keep you posted
+                  ...</q
+                >
               </blockquote>
-              <img class="centered-and-cropped" width="50" height="50" style="border-radius:50%;margin:0 0 0 10px" src="assets/provider.jpeg" />
+              <img
+                class="centered-and-cropped"
+                width="50"
+                height="50"
+                style="border-radius: 50%; margin: 0 0 0 10px"
+                src="assets/provider.jpeg"
+              />
             </div>
-            <div class="row fragment" style="justify-content: flex-start; align-items: center;margin:10px 0 0 0">
-              <img class="centered-and-cropped" width="50" height="50" style="border-radius:50%;margin:0 10px 0 0" src="assets/consumer.jpeg" />
-              <blockquote class="chat" >
+            <div
+              class="row fragment"
+              style="
+                justify-content: flex-start;
+                align-items: center;
+                margin: 10px 0 0 0;
+              "
+            >
+              <img
+                class="centered-and-cropped"
+                width="50"
+                height="50"
+                style="border-radius: 50%; margin: 0 10px 0 0"
+                src="assets/consumer.jpeg"
+              />
+              <blockquote class="chat">
                 <q>ok, but...</q>
               </blockquote>
             </div>
-            <div class="row fragment" style="justify-content: flex-end; align-items: center; margin: 10px 0 0 0">
+            <div
+              class="row fragment"
+              style="
+                justify-content: flex-end;
+                align-items: center;
+                margin: 10px 0 0 0;
+              "
+            >
               <blockquote class="chat">
-                <q>... and it has an amazing <span style="color:steelblue">blue</span> color!</q>
+                <q
+                  >... and it has an amazing
+                  <span style="color: steelblue">blue</span> color!</q
+                >
               </blockquote>
-              <img class="centered-and-cropped" width="50" height="50" style="border-radius:50%;margin:0 0 0 10px" src="assets/provider.jpeg" />
+              <img
+                class="centered-and-cropped"
+                width="50"
+                height="50"
+                style="border-radius: 50%; margin: 0 0 0 10px"
+                src="assets/provider.jpeg"
+              />
             </div>
-            <div class="row r-stack" style="justify-content: space-evenly; margin-top:20px">
-              <img class="fragment fade-in-then-out" height="100" src="assets/google-docs-logo.png"/>
-              <img class="fragment fade-in-then-out" height="100" src="assets/openapi-logo.png"/>
-              <img class="fragment" height="100" src="assets/swagger-logo.png"/>
+            <div
+              class="row r-stack"
+              style="justify-content: space-evenly; margin-top: 20px"
+            >
+              <img
+                class="fragment fade-in-then-out"
+                height="100"
+                src="assets/google-docs-logo.png"
+              />
+              <img
+                class="fragment fade-in-then-out"
+                height="100"
+                src="assets/openapi-logo.png"
+              />
+              <img
+                class="fragment"
+                height="100"
+                src="assets/swagger-logo.png"
+              />
             </div>
           </section>
           <section data-auto-animate>
             <div class="row">
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
-                <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <img
+                  data-id="pact-logo-image"
+                  data-src="assets/pact-logo-icon_white.png"
+                  width="20px"
+                  style="margin: 5px 0"
+                />
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  PACT 101
+                </h1>
               </div>
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <h1 data-id="pact-logo-text" style="font-size:15px">The Problem</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  The Problem
+                </h1>
               </div>
             </div>
-            <div class="col" style="align-items: center;">
-              <img height="200" width="500" style="border-radius: 5px"  src="assets/inevitability.gif"/>
-              <img class="fragment" height="400" style="border-radius: 5px" src="assets/explosion-2.gif"/>
-              <img src="assets/aaaaaa.png" class="fragment" style="position: absolute; top:0; left: 50%px">
-              <img src="assets/destroy-pc.png" class="fragment" style="position: absolute; top:0; left: 50%px">
-              <img src="assets/destroy-pc1.jpeg" class="fragment" height="700px" style="position: absolute; top:0; left: 50%px">
+            <div class="col" style="align-items: center">
+              <img
+                height="200"
+                width="500"
+                style="border-radius: 5px"
+                src="assets/inevitability.gif"
+              />
+              <img
+                class="fragment"
+                height="400"
+                style="border-radius: 5px"
+                src="assets/explosion-2.gif"
+              />
+              <img
+                src="assets/aaaaaa.png"
+                class="fragment"
+                style="position: absolute; top: 0; left: 50%px"
+              />
+              <img
+                src="assets/destroy-pc.png"
+                class="fragment"
+                style="position: absolute; top: 0; left: 50%px"
+              />
+              <img
+                src="assets/destroy-pc1.jpeg"
+                class="fragment"
+                height="700px"
+                style="position: absolute; top: 0; left: 50%px"
+              />
             </div>
           </section>
           <section data-auto-animate>
             <div class="row">
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
-                <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <img
+                  data-id="pact-logo-image"
+                  data-src="assets/pact-logo-icon_white.png"
+                  width="20px"
+                  style="margin: 5px 0"
+                />
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  PACT 101
+                </h1>
               </div>
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <h1 data-id="pact-logo-text" style="font-size:15px">The Problem</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  The Problem
+                </h1>
               </div>
             </div>
-            <div class="row" style="justify-content: space-evenly; margin-top: 50px">
-              <div style="font-size: 30px; margin: 50px 0px 100px 0px;">
+            <div
+              class="row"
+              style="justify-content: space-evenly; margin-top: 50px"
+            >
+              <div style="font-size: 30px; margin: 50px 0px 100px 0px">
                 <div class="r-stack">
-                  <p data-fragment-index="1" class="fragment fade-in-then-out">The Dev 1</p>
+                  <p data-fragment-index="1" class="fragment fade-in-then-out">
+                    The Dev 1
+                  </p>
                   <p data-fragment-index="2" class="fragment">The Consumer</p>
                 </div>
-                <img class="centered-and-cropped" width="200" height="200" style="border-radius:50%" src="assets/consumer.jpeg"/>
+                <img
+                  class="centered-and-cropped"
+                  width="200"
+                  height="200"
+                  style="border-radius: 50%"
+                  src="assets/consumer.jpeg"
+                />
               </div>
-              <div style="font-size: 30px; margin: 50px 0px 100px 0px;">
+              <div style="font-size: 30px; margin: 50px 0px 100px 0px">
                 <div class="r-stack">
-                  <p data-fragment-index="1" class="fragment fade-in-then-out">The Dev 2</p>
+                  <p data-fragment-index="1" class="fragment fade-in-then-out">
+                    The Dev 2
+                  </p>
                   <p data-fragment-index="2" class="fragment">The Provider</p>
                 </div>
-                <img class="centered-and-cropped" width="200" height="200" style="border-radius:50%" src="assets/provider.jpeg" />
+                <img
+                  class="centered-and-cropped"
+                  width="200"
+                  height="200"
+                  style="border-radius: 50%"
+                  src="assets/provider.jpeg"
+                />
               </div>
             </div>
-            <p data-fragment-index="3" class="fragment"><b style="color:steelblue">***</b> = API documentation</p>
+            <p data-fragment-index="3" class="fragment">
+              <b style="color: steelblue">***</b> = API documentation
+            </p>
           </section>
           <section data-auto-animate>
             <div class="row">
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
-                <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <img
+                  data-id="pact-logo-image"
+                  data-src="assets/pact-logo-icon_white.png"
+                  width="20px"
+                  style="margin: 5px 0"
+                />
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  PACT 101
+                </h1>
               </div>
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <h1 data-id="pact-logo-text" style="font-size:15px">The Problem</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  The Problem
+                </h1>
               </div>
             </div>
             <div class="r-stretch">
-              <p class="r-fit-text" style="margin-top:200px">
-                It was <span class="fragment highlight-green">no one's</span> fault, actually.
+              <p class="r-fit-text" style="margin-top: 200px">
+                It was
+                <span class="fragment highlight-green">no one's</span> fault,
+                actually.
               </p>
             </div>
           </section>
           <section data-auto-animate>
             <div class="row">
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
-                <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <img
+                  data-id="pact-logo-image"
+                  data-src="assets/pact-logo-icon_white.png"
+                  width="20px"
+                  style="margin: 5px 0"
+                />
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  PACT 101
+                </h1>
               </div>
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <h1 data-id="pact-logo-text" style="font-size:15px">The Problem</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  The Problem
+                </h1>
               </div>
             </div>
             <style>
@@ -364,46 +890,106 @@
 
               .fragment.rotate45.visible {
                 transform: scale(1.25);
-                color:steelblue;
+                color: steelblue;
               }
             </style>
-            <div class="col" style="align-items: center; height: 100%;">
-              <p style="font-size: 50px;">
-                Possible solution?
-              </p>
+            <div class="col" style="align-items: center; height: 100%">
+              <p style="font-size: 50px">Possible solution?</p>
               <p class="r-fit-text">
-                <span data-fragment-index="4" class="fragment"><span data-fragment-index="7" class="fragment rotate45">C</span></span><span data-fragment-index="6" class="fragment">onsumer </span>
-                <span data-fragment-index="2" class="fragment"><span data-fragment-index="7" class="fragment rotate45">D</span></span><span data-fragment-index="6" class="fragment">riven </span>
-                <span data-fragment-index="3" class="fragment"><span data-fragment-index="7" class="fragment rotate45">C</span></span><span data-fragment-index="6" class="fragment">ontract </span>
-                <span data-fragment-index="1" class="fragment"><span data-fragment-index="7" class="fragment rotate45">T</span></span><span data-fragment-index="6" class="fragment">esting </span>
+                <span data-fragment-index="4" class="fragment"
+                  ><span data-fragment-index="7" class="fragment rotate45"
+                    >C</span
+                  ></span
+                ><span data-fragment-index="6" class="fragment">onsumer </span>
+                <span data-fragment-index="2" class="fragment"
+                  ><span data-fragment-index="7" class="fragment rotate45"
+                    >D</span
+                  ></span
+                ><span data-fragment-index="6" class="fragment">riven </span>
+                <span data-fragment-index="3" class="fragment"
+                  ><span data-fragment-index="7" class="fragment rotate45"
+                    >C</span
+                  ></span
+                ><span data-fragment-index="6" class="fragment">ontract </span>
+                <span data-fragment-index="1" class="fragment"
+                  ><span data-fragment-index="7" class="fragment rotate45"
+                    >T</span
+                  ></span
+                ><span data-fragment-index="6" class="fragment">esting </span>
               </p>
-              <img class="fragment" src="assets/pact-logo-text_white.png"/>
-              <div class="row fragment" style="justify-content: center;">
-                <img class="" width="300px"  src="assets/meme-happy.png"/>
-                <img class="" style="transform: rotateY(180deg);" width="300px"  src="assets/meme-happy.png"/>
+              <img class="fragment" src="assets/pact-logo-text_white.png" />
+              <div class="row fragment" style="justify-content: center">
+                <img class="" width="300px" src="assets/meme-happy.png" />
+                <img
+                  class=""
+                  style="transform: rotateY(180deg)"
+                  width="300px"
+                  src="assets/meme-happy.png"
+                />
               </div>
             </div>
           </section>
           <section data-auto-animate>
             <div class="row">
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
-                <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <img
+                  data-id="pact-logo-image"
+                  data-src="assets/pact-logo-icon_white.png"
+                  width="20px"
+                  style="margin: 5px 0"
+                />
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  PACT 101
+                </h1>
               </div>
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <h1 data-id="pact-logo-text" style="font-size:15px">The Problem</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  The Problem
+                </h1>
               </div>
             </div>
-            <div class="col" style="align-items: center; height: 70%;">
-              <p style="font-size: 50px;">
-                Alternatives?
-              </p>
+            <div class="col" style="align-items: center; height: 70%">
+              <p style="font-size: 50px">Alternatives?</p>
               <ol>
-                <li><a href="https://spring.io/projects/spring-cloud-contract">Spring Cloud Contract</a></li>
+                <li>
+                  <a href="https://spring.io/projects/spring-cloud-contract"
+                    >Spring Cloud Contract</a
+                  >
+                </li>
                 <li><a href="https://github.com/vcr/vcr">VCR</a></li>
-                <li><a href="https://github.com/thoughtworks/pacto">Pacto</a></li>
-                <li><a href="https://github.com/bblimke/webmock">Webmock</a></li>
-                <li><a href="https://docs.pact.io/getting_started/comparisons/">Others</a></li>
+                <li>
+                  <a href="https://github.com/thoughtworks/pacto">Pacto</a>
+                </li>
+                <li>
+                  <a href="https://github.com/bblimke/webmock">Webmock</a>
+                </li>
+                <li>
+                  <a href="https://docs.pact.io/getting_started/comparisons/"
+                    >Others</a
+                  >
+                </li>
               </ol>
             </div>
           </section>
@@ -411,12 +997,43 @@
         <section>
           <section data-auto-animate>
             <div class="row">
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
-                <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <img
+                  data-id="pact-logo-image"
+                  data-src="assets/pact-logo-icon_white.png"
+                  width="20px"
+                  style="margin: 5px 0"
+                />
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  PACT 101
+                </h1>
               </div>
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <h1 data-id="pact-logo-text" style="font-size:15px">Concepts</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  Concepts
+                </h1>
               </div>
             </div>
             <style>
@@ -429,224 +1046,684 @@
                 display: none;
               }
             </style>
-            <p>WTF is dis?</p>
-            <img src="assets/negro-sonrie-pc.jpg" data-fragment-index="1" width="500px" class="fragment dissapear"/>
-            <blockquote data-fragment-index="1" class="fragment fade-in" style="width: 800px;">
-              <q><span style="color: #4281e4; font-weight: 500;">Contract testing</span> is a methodology for ensuring that two separate systems (such as two microservices) are compatible and are able to communicate with one other.</q>
+            <p>WTF is this?</p>
+            <img
+              src="assets/negro-sonrie-pc.jpg"
+              data-fragment-index="1"
+              width="500px"
+              class="fragment dissapear"
+            />
+            <blockquote
+              data-fragment-index="1"
+              class="fragment fade-in"
+              style="width: 800px"
+            >
+              <q
+                ><span style="color: #4281e4; font-weight: 500"
+                  >Contract testing</span
+                >
+                is a methodology for ensuring that two separate systems (such as
+                two microservices) are compatible and are able to communicate
+                with one other.</q
+              >
             </blockquote>
-            <blockquote data-fragment-index="2" class="fragment" style="width: 800px;">
-              <q><span style="color: #4281e4; font-weight: 500;">Consumer driven contract testing</span> is a type of contract testing that ensures that a provider is compatible with the expectations that the consumer has of it.</q>
+            <blockquote
+              data-fragment-index="2"
+              class="fragment"
+              style="width: 800px"
+            >
+              <q
+                ><span style="color: #4281e4; font-weight: 500"
+                  >Consumer driven contract testing</span
+                >
+                is a type of contract testing that ensures that a provider is
+                compatible with the expectations that the consumer has of it.</q
+              >
             </blockquote>
-            <span data-fragment-index="2" class="fragment">More info <a href="https://pactflow.io/blog/what-is-contract-testing/">here</a></span>
+            <span data-fragment-index="2" class="fragment"
+              >More info
+              <a href="https://pactflow.io/blog/what-is-contract-testing/"
+                >here</a
+              ></span
+            >
           </section>
           <section data-auto-animate>
             <div class="row">
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
-                <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <img
+                  data-id="pact-logo-image"
+                  data-src="assets/pact-logo-icon_white.png"
+                  width="20px"
+                  style="margin: 5px 0"
+                />
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  PACT 101
+                </h1>
               </div>
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <h1 data-id="pact-logo-text" style="font-size:15px">Concepts</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  Concepts
+                </h1>
               </div>
             </div>
-            <div class="r-stretch col" style="align-items: center;">
-              <div class="row" style="align-items: flex-start; justify-content: space-evenly;">
-                <div class="col" style="padding-right: 20px;">
-                  <div style="text-transform: uppercase; font-size: 26px; text-align: left;color: steelblue;">Service consumer</div>
-                  <div style="font-size: 20px; padding:10px 20px 20px 0px; text-align: left;">A component that initiates an HTTP request to another component.</div>
+            <div class="r-stretch col" style="align-items: center">
+              <div
+                class="row"
+                style="align-items: flex-start; justify-content: space-evenly"
+              >
+                <div class="col" style="padding-right: 20px">
+                  <div
+                    style="
+                      text-transform: uppercase;
+                      font-size: 26px;
+                      text-align: left;
+                      color: steelblue;
+                    "
+                  >
+                    Service consumer
+                  </div>
+                  <div
+                    style="
+                      font-size: 20px;
+                      padding: 10px 20px 20px 0px;
+                      text-align: left;
+                    "
+                  >
+                    A component that initiates an HTTP request to another
+                    component.
+                  </div>
                 </div>
-                <div class="col fragment" style="padding-right: 20px;">
-                  <div style="text-transform: uppercase; font-size: 26px; text-align: left;color: steelblue;">Service provider</div>
-                  <div style="font-size: 20px; padding:10px 20px 20px 0px; text-align: left;">A server that responds to an HTTP request from another component. Should be thought as the deployable unit.</div>
+                <div class="col fragment" style="padding-right: 20px">
+                  <div
+                    style="
+                      text-transform: uppercase;
+                      font-size: 26px;
+                      text-align: left;
+                      color: steelblue;
+                    "
+                  >
+                    Service provider
+                  </div>
+                  <div
+                    style="
+                      font-size: 20px;
+                      padding: 10px 20px 20px 0px;
+                      text-align: left;
+                    "
+                  >
+                    A server that responds to an HTTP request from another
+                    component. Should be thought as the deployable unit.
+                  </div>
                 </div>
-                <div class="col fragment" style="padding-right: 20px;">
-                  <div style="text-transform: uppercase; font-size: 26px; text-align: left;color: steelblue;">Mock Service Provider</div>
-                  <div style="font-size: 18px; padding:10px 20px 20px 0px; text-align: left;">Used by tests in the consumer project to mock out the actual service provider, meaning that integration-like tests can be run without requiring the actual service provider to be available.</div>
+                <div class="col fragment" style="padding-right: 20px">
+                  <div
+                    style="
+                      text-transform: uppercase;
+                      font-size: 26px;
+                      text-align: left;
+                      color: steelblue;
+                    "
+                  >
+                    Mock Service Provider
+                  </div>
+                  <div
+                    style="
+                      font-size: 18px;
+                      padding: 10px 20px 20px 0px;
+                      text-align: left;
+                    "
+                  >
+                    Used by tests in the consumer project to mock out the actual
+                    service provider, meaning that integration-like tests can be
+                    run without requiring the actual service provider to be
+                    available.
+                  </div>
                 </div>
               </div>
             </div>
           </section>
           <section data-auto-animate>
             <div class="row">
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
-                <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <img
+                  data-id="pact-logo-image"
+                  data-src="assets/pact-logo-icon_white.png"
+                  width="20px"
+                  style="margin: 5px 0"
+                />
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  PACT 101
+                </h1>
               </div>
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <h1 data-id="pact-logo-text" style="font-size:15px">Concepts</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  Concepts
+                </h1>
               </div>
             </div>
-            <div class="row" style="justify-content: space-evenly; align-items: flex-start; margin-top:50px">
-              <div class="col" style="align-items: center;">
-                <p style="text-transform: uppercase; color: steelblue;">Interaction</p>
-                <img src="assets/pact-interaction-state.png" width="200px"/>
+            <div
+              class="row"
+              style="
+                justify-content: space-evenly;
+                align-items: flex-start;
+                margin-top: 50px;
+              "
+            >
+              <div class="col" style="align-items: center">
+                <p style="text-transform: uppercase; color: steelblue">
+                  Interaction
+                </p>
+                <img src="assets/pact-interaction-state.png" width="200px" />
               </div>
-              <div class="col fragment" style="align-items: center;">
-                <p style="text-transform: uppercase; color: steelblue;">Pact</p>
-                <img src="assets/pact-complete.png" width="300px"/>
+              <div class="col fragment" style="align-items: center">
+                <p style="text-transform: uppercase; color: steelblue">Pact</p>
+                <img src="assets/pact-complete.png" width="300px" />
               </div>
             </div>
-            <span class="fragment">More info <a href=" https://docs.pact.io/getting_started/terminology">here</a></span>
+            <span class="fragment"
+              >More info
+              <a href=" https://docs.pact.io/getting_started/terminology"
+                >here</a
+              ></span
+            >
           </section>
           <section data-auto-animate>
             <div class="row">
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
-                <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <img
+                  data-id="pact-logo-image"
+                  data-src="assets/pact-logo-icon_white.png"
+                  width="20px"
+                  style="margin: 5px 0"
+                />
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  PACT 101
+                </h1>
               </div>
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <h1 data-id="pact-logo-text" style="font-size:15px">Concepts</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  Concepts
+                </h1>
               </div>
             </div>
-            <div class="row" style="justify-content: space-evenly; align-items: flex-start;">
-              <div class="col" style="align-items: center; margin-top: 50px;">
+            <div
+              class="row"
+              style="justify-content: space-evenly; align-items: flex-start"
+            >
+              <div class="col" style="align-items: center; margin-top: 50px">
                 <p style="color: steelblue">THE BROKER</p>
                 <div class="r-stack">
-                  <img class="fragment" src="assets/broker-sample.png" width="600px"/>
-                  <img class="fragment" src="assets/pact-broker.png" width="600px"/>
+                  <img
+                    class="fragment"
+                    src="assets/broker-sample.png"
+                    width="600px"
+                  />
+                  <img
+                    class="fragment"
+                    src="assets/pact-broker.png"
+                    width="600px"
+                  />
                 </div>
               </div>
             </div>
           </section>
           <section data-auto-animate>
             <div class="row">
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
-                <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <img
+                  data-id="pact-logo-image"
+                  data-src="assets/pact-logo-icon_white.png"
+                  width="20px"
+                  style="margin: 5px 0"
+                />
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  PACT 101
+                </h1>
               </div>
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <h1 data-id="pact-logo-text" style="font-size:15px">Concepts</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  Concepts
+                </h1>
               </div>
             </div>
             <p>The Flow</p>
             <div class="row">
-              <div data-fragment-index="1" class="fragment fade-in-then-semi-out">Generate</div>
-              <div data-fragment-index="2" class="fragment fade-in-then-semi-out">Publish</div>
+              <div
+                data-fragment-index="1"
+                class="fragment fade-in-then-semi-out"
+              >
+                Generate
+              </div>
+              <div
+                data-fragment-index="2"
+                class="fragment fade-in-then-semi-out"
+              >
+                Publish
+              </div>
               <div data-fragment-index="3" class="fragment fade-in">Verify</div>
             </div>
             <div class="r-stack">
-              <img data-fragment-index="1" class="fragment" data-src="assets/pactflow-1.gif"/>
-              <img data-fragment-index="2" class="fragment" data-src="assets/pactflow-2.gif"/>
-              <img data-fragment-index="3" class="fragment" data-src="assets/pactflow-3.gif"/>
+              <img
+                data-fragment-index="1"
+                class="fragment"
+                data-src="assets/pactflow-1.gif"
+              />
+              <img
+                data-fragment-index="2"
+                class="fragment"
+                data-src="assets/pactflow-2.gif"
+              />
+              <img
+                data-fragment-index="3"
+                class="fragment"
+                data-src="assets/pactflow-3.gif"
+              />
             </div>
           </section>
           <section data-auto-animate>
             <div class="row">
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
-                <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <img
+                  data-id="pact-logo-image"
+                  data-src="assets/pact-logo-icon_white.png"
+                  width="20px"
+                  style="margin: 5px 0"
+                />
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  PACT 101
+                </h1>
               </div>
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <h1 data-id="pact-logo-text" style="font-size:15px">Concepts</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  Concepts
+                </h1>
               </div>
             </div>
             <p>That's it</p>
-            <img src="assets/face-shrink.gif" width="500px"/>
+            <img src="assets/face-shrink.gif" width="500px" />
           </section>
         </section>
         <section data-auto-animate>
           <section data-auto-animate>
             <div class="row">
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
-                <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <img
+                  data-id="pact-logo-image"
+                  data-src="assets/pact-logo-icon_white.png"
+                  width="20px"
+                  style="margin: 5px 0"
+                />
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  PACT 101
+                </h1>
               </div>
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <h1 data-id="pact-logo-text" style="font-size:15px">The POC</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  The POC
+                </h1>
               </div>
             </div>
             <p>The POC</p>
-            <img data-src="assets/netflis-logo.png"  width="400px" height="400px" style="border-radius: 50%;"/>
-            <img data-src="assets/hachebo-logo.png" width="400px" height="400px" style="border-radius: 50%;"/>
+            <img
+              data-src="assets/netflis-logo.png"
+              width="400px"
+              height="400px"
+              style="border-radius: 50%"
+            />
+            <img
+              data-src="assets/hachebo-logo.png"
+              width="400px"
+              height="400px"
+              style="border-radius: 50%"
+            />
           </section>
-          <section data-auto-animate class="fig-container" data-fig-id="fig-diagram1" data-file="diagram.html">
+          <section
+            data-auto-animate
+            class="fig-container"
+            data-fig-id="fig-diagram1"
+            data-file="diagram.html"
+          >
             <div class="row">
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
-                <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <img
+                  data-id="pact-logo-image"
+                  data-src="assets/pact-logo-icon_white.png"
+                  width="20px"
+                  style="margin: 5px 0"
+                />
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  PACT 101
+                </h1>
               </div>
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <h1 data-id="pact-logo-text" style="font-size:15px">The POC</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  The POC
+                </h1>
               </div>
             </div>
             <p>Project structure</p>
           </section>
+
           <section data-auto-animate>
             <div class="row">
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
-                <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <img
+                  data-id="pact-logo-image"
+                  data-src="assets/pact-logo-icon_white.png"
+                  width="20px"
+                  style="margin: 5px 0"
+                />
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  PACT 101
+                </h1>
               </div>
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <h1 data-id="pact-logo-text" style="font-size:15px">The POC</h1>
-              </div>
-            </div>
-            <p>Tech stack</p>
-            <figure>
-              <blockquote data-fragment-index="1" class="fragment">
-                <q>Any application that can be written in Javascript, will eventually be written in Javascript.</q>
-              </blockquote>
-              <figcaption data-fragment-index="1" class="fragment">Minghui Ye</figcaption>
-            </figure>
-            <figure>
-              <blockquote data-fragment-index="2" class="fragment">
-                <q>I do love coding in Java 1.5 and I miss it so much.</q>
-              </blockquote>
-              <figcaption data-fragment-index="2" class="fragment">David Martin</figcaption>
-            </figure>
-          </section>
-          <section data-auto-animate>
-            <div class="row">
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
-                <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
-              </div>
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <h1 data-id="pact-logo-text" style="font-size:15px">The POC</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  The POC
+                </h1>
               </div>
             </div>
             <p>
               <span>Repo &rarr;</span>
-              <a href="https://github.com/sauldeleon/pact-example/tree/master/javascript">
-                <img style="margin:0;display: inline-block; vertical-align: middle;padding-bottom: 8px;" width="300px" src="https://img.shields.io/badge/Pepe%20loves%20this-shit-green?logo=amazonaws"/>
+              <a
+                href="https://github.com/sauldeleon/pact-example/tree/master/javascript"
+              >
+                <img
+                  style="
+                    margin: 0;
+                    display: inline-block;
+                    vertical-align: middle;
+                    padding-bottom: 8px;
+                  "
+                  width="300px"
+                  src="https://img.shields.io/badge/See%20you%20on-monday-green?logo=javascript"
+                />
               </a>
-              <a href="https://github.com/sauldeleon/pact-example/tree/master/python">
-                <img style="margin:0;display: inline-block; vertical-align: middle;padding-bottom: 8px;" width="300px" src="https://img.shields.io/badge/Cesar%20will%20marry-this-red?logo=jenkins"/>
+              <a
+                href="https://github.com/sauldeleon/pact-example/tree/master/python"
+              >
+                <img
+                  style="
+                    margin: 0;
+                    display: inline-block;
+                    vertical-align: middle;
+                    padding-bottom: 8px;
+                  "
+                  width="300px"
+                  src="https://img.shields.io/badge/Josep%20marry%20me-please-red?logo=python"
+                />
               </a>
             </p>
-              
-            <div class="row" style="align-items: flex-start;">
+
+            <div class="row" style="align-items: flex-start">
               <div class="col" style="align-items: center; padding: 0px 20px">
                 <div>Front apps</div>
                 <div class="row">
-                  <img src="assets/reactjs-logo.png" width="200px" height="200px" style="border-radius: 50%;"/>
-                  <img src="assets/pact-logo-icon_white.png" width="200px" height="200px" style="border-radius: 50%;"/>
+                  <img
+                    src="assets/reactjs-logo.png"
+                    width="200px"
+                    height="200px"
+                    style="border-radius: 50%"
+                  />
+                  <img
+                    src="assets/pact-logo-icon_white.png"
+                    width="200px"
+                    height="200px"
+                    style="border-radius: 50%"
+                  />
                 </div>
               </div>
-              <div class="col" style="align-items: center;  padding: 0px 20px">
+              <div class="col" style="align-items: center; padding: 0px 20px">
                 <div>APIs</div>
                 <div class="row">
-                  <img src="assets/nodejs-logo.png" width="200px" height="200px" style="border-radius: 50%;"/>
-                  <img src="assets/python-logo.png" width="200px" height="200px" style="border-radius: 50%;"/>
+                  <img
+                    src="assets/nodejs-logo.png"
+                    width="200px"
+                    height="200px"
+                    style="border-radius: 50%"
+                  />
+                  <img
+                    src="assets/python-logo.png"
+                    width="200px"
+                    height="200px"
+                    style="border-radius: 50%"
+                  />
                 </div>
                 <div class="row">
-                  <img src="assets/expressjs-logo.png" width="200px"  height="200px" style="border-radius: 50%;"/>
-                  <img src="assets/fastapi-logo.svg" width="200px" height="200px" style="border-radius: 50%;"/>
+                  <img
+                    src="assets/expressjs-logo.png"
+                    width="200px"
+                    height="200px"
+                    style="border-radius: 50%"
+                  />
+                  <img
+                    src="assets/fastapi-logo.svg"
+                    width="200px"
+                    height="200px"
+                    style="border-radius: 50%"
+                  />
                 </div>
               </div>
             </div>
           </section>
           <section data-auto-animate>
             <div class="row">
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
-                <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <img
+                  data-id="pact-logo-image"
+                  data-src="assets/pact-logo-icon_white.png"
+                  width="20px"
+                  style="margin: 5px 0"
+                />
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  PACT 101
+                </h1>
               </div>
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <h1 data-id="pact-logo-text" style="font-size:15px">The POC</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  The POC
+                </h1>
               </div>
             </div>
-            <h3 style="margin-top:50px">
+            <h3 style="margin-top: 50px">
               <span>Generating pacts: </span>
               <span style="color: #f0db4f">Javascript</span>
             </h3>
@@ -669,15 +1746,46 @@
           </section>
           <section data-auto-animate>
             <div class="row">
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
-                <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <img
+                  data-id="pact-logo-image"
+                  data-src="assets/pact-logo-icon_white.png"
+                  width="20px"
+                  style="margin: 5px 0"
+                />
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  PACT 101
+                </h1>
               </div>
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <h1 data-id="pact-logo-text" style="font-size:15px">The POC</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  The POC
+                </h1>
               </div>
             </div>
-            <h3 style="margin-top:50px">
+            <h3 style="margin-top: 50px">
               <span>Generating pacts: </span>
               <span style="color: #f0db4f">Javascript</span>
             </h3>
@@ -729,18 +1837,50 @@
           </section>
           <section data-auto-animate>
             <div class="row">
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
-                <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <img
+                  data-id="pact-logo-image"
+                  data-src="assets/pact-logo-icon_white.png"
+                  width="20px"
+                  style="margin: 5px 0"
+                />
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  PACT 101
+                </h1>
               </div>
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <h1 data-id="pact-logo-text" style="font-size:15px">The POC</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  The POC
+                </h1>
               </div>
             </div>
-            <h3 style="margin-top:50px">
+            <h3 style="margin-top: 50px">
               <span>Generating pacts: </span>
               <span>
-                <span style="color: #306998">Py</span><span style="color: #ffd43b">thon</span>
+                <span style="color: #306998">Py</span
+                ><span style="color: #ffd43b">thon</span>
               </span>
             </h3>
             <pre>
@@ -756,18 +1896,50 @@
           </section>
           <section data-auto-animate>
             <div class="row">
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
-                <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <img
+                  data-id="pact-logo-image"
+                  data-src="assets/pact-logo-icon_white.png"
+                  width="20px"
+                  style="margin: 5px 0"
+                />
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  PACT 101
+                </h1>
               </div>
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <h1 data-id="pact-logo-text" style="font-size:15px">The POC</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  The POC
+                </h1>
               </div>
             </div>
-            <h3 style="margin-top:50px">
+            <h3 style="margin-top: 50px">
               <span>Generating pacts: </span>
               <span>
-                <span style="color: #306998">Py</span><span style="color: #ffd43b">thon</span>
+                <span style="color: #306998">Py</span
+                ><span style="color: #ffd43b">thon</span>
               </span>
             </h3>
             <pre>
@@ -796,91 +1968,232 @@
           </section>
           <section data-auto-animate>
             <div class="row">
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
-                <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <img
+                  data-id="pact-logo-image"
+                  data-src="assets/pact-logo-icon_white.png"
+                  width="20px"
+                  style="margin: 5px 0"
+                />
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  PACT 101
+                </h1>
               </div>
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <h1 data-id="pact-logo-text" style="font-size:15px">Lets PACT</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  Lets PACT
+                </h1>
               </div>
             </div>
             <h3>Summary</h3>
-            <img src="assets/sumary.jpeg" alt="">
+            <img src="assets/sumary.jpeg" alt="" />
           </section>
           <section data-auto-animate>
             <style>
               .bitches {
-                color: #191919; 
+                color: #191919;
               }
-              .bitches::selection{
+              .bitches::selection {
                 background: #ffd43b;
-                color: #191919; 
+                color: #191919;
               }
             </style>
             <div class="row">
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878; height:30px;">
-                <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
-                <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <img
+                  data-id="pact-logo-image"
+                  data-src="assets/pact-logo-icon_white.png"
+                  width="20px"
+                  style="margin: 5px 0"
+                />
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  PACT 101
+                </h1>
               </div>
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878; height:30px;">
-                <h1 data-id="pact-logo-text" style="font-size:15px">Let's PACT</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  Let's PACT
+                </h1>
               </div>
             </div>
             <h3>Let's PACT <span class="bitches">bitches</span></h3>
             <div>
               <ol>
-                <li data-fragment-index="1" class="fragment fade-in-then-semi-out">
+                <li
+                  data-fragment-index="1"
+                  class="fragment fade-in-then-semi-out"
+                >
                   <span>Generate and publish </span>
-                  <img 
-                    src="assets/netflis-logo.png" 
-                    style="border-radius: 50%; display: inline-block; vertical-align: middle;"
-                    width="40px"/>
+                  <img
+                    src="assets/netflis-logo.png"
+                    style="
+                      border-radius: 50%;
+                      display: inline-block;
+                      vertical-align: middle;
+                    "
+                    width="40px"
+                  />
                   <span> and </span>
-                  <img 
+                  <img
                     src="assets/hachebo-logo.png"
-                    style="border-radius: 50%; border: 1px solid rgb(61, 59, 59); display: inline-block; vertical-align: middle;"
-                    width="40px"/>
+                    style="
+                      border-radius: 50%;
+                      border: 1px solid rgb(61, 59, 59);
+                      display: inline-block;
+                      vertical-align: middle;
+                    "
+                    width="40px"
+                  />
                   <span> PACTS</span>
                 </li>
-                <li data-fragment-index="2" class="fragment fade-in-then-semi-out">
+                <li
+                  data-fragment-index="2"
+                  class="fragment fade-in-then-semi-out"
+                >
                   <span>Generate and publish </span>
-                  <span style="color:rgb(19, 179, 14)">TV shows API</span>
+                  <span style="color: rgb(19, 179, 14)">TV shows API</span>
                   <span> and </span>
-                  <span style="color:tomato">Movies API</span>
+                  <span style="color: tomato">Movies API</span>
                   <span> PACTS</span>
                 </li>
-                <li data-fragment-index="3" class="fragment fade-in-then-semi-out">Verify all PACTS</li>
+                <li
+                  data-fragment-index="3"
+                  class="fragment fade-in-then-semi-out"
+                >
+                  Verify all PACTS
+                </li>
               </ol>
               <div class="r-stack">
-                <img data-fragment-index="1" class="fragment" data-src="assets/poc-diagram.png"/>
-                <img data-fragment-index="2" class="fragment fade-in-then-out" data-src="assets/poc-diagram.png"/>
-                <img data-fragment-index="3"  class="fragment fade-in-then-out" data-src="assets/poc-diagram.png"/>
+                <img
+                  data-fragment-index="1"
+                  class="fragment"
+                  data-src="assets/poc-diagram.png"
+                />
+                <img
+                  data-fragment-index="2"
+                  class="fragment fade-in-then-out"
+                  data-src="assets/poc-diagram.png"
+                />
+                <img
+                  data-fragment-index="3"
+                  class="fragment fade-in-then-out"
+                  data-src="assets/poc-diagram.png"
+                />
               </div>
             </div>
           </section>
           <section data-auto-animate>
             <div class="row">
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
-                <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <img
+                  data-id="pact-logo-image"
+                  data-src="assets/pact-logo-icon_white.png"
+                  width="20px"
+                  style="margin: 5px 0"
+                />
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  PACT 101
+                </h1>
               </div>
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <h1 data-id="pact-logo-text" style="font-size:15px">Lets PACT</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  Lets PACT
+                </h1>
               </div>
             </div>
             <h3>What if...</h3>
             <div>
               <ul>
-                <li data-fragment-index="1" class="fragment fade-in-then-semi-out">
+                <li
+                  data-fragment-index="1"
+                  class="fragment fade-in-then-semi-out"
+                >
                   ... The response changes with the same version of the API
                 </li>
-                <li data-fragment-index="2" class="fragment fade-in-then-semi-out">
+                <li
+                  data-fragment-index="2"
+                  class="fragment fade-in-then-semi-out"
+                >
                   ... The pact changes with the same version of the consumer
                 </li>
               </ul>
               <div class="r-stack">
-                <img data-fragment-index="1" class="fragment" data-src="assets/poc-diagram.png"/>
-                <img data-fragment-index="2" class="fragment fade-in-then-semi-out" data-src="assets/poc-diagram.png"/>
+                <img
+                  data-fragment-index="1"
+                  class="fragment"
+                  data-src="assets/poc-diagram.png"
+                />
+                <img
+                  data-fragment-index="2"
+                  class="fragment fade-in-then-semi-out"
+                  data-src="assets/poc-diagram.png"
+                />
               </div>
             </div>
           </section>
@@ -894,11 +2207,11 @@
               }
               ul.check-list li {
                 padding-left: 1.3em;
-                margin-top:20px;
+                margin-top: 20px;
               }
               ul.check-list li:before {
                 content: "\f00c"; /* FontAwesome Unicode */
-                font-family: 'Font Awesome\ 5 Free';
+                font-family: "Font Awesome\ 5 Free";
                 font-weight: 900;
                 display: inline-block;
                 margin-left: -1.3em; /* same as padding-left set on li */
@@ -906,18 +2219,56 @@
               }
             </style>
             <div class="row">
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
-                <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <img
+                  data-id="pact-logo-image"
+                  data-src="assets/pact-logo-icon_white.png"
+                  width="20px"
+                  style="margin: 5px 0"
+                />
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  PACT 101
+                </h1>
               </div>
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <h1 data-id="pact-logo-text" style="font-size:15px">Next steps</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  Next steps
+                </h1>
               </div>
             </div>
             <h3>Next?</h3>
             <ul class="check-list">
               <li class="fragment">
-                <span>Tons of lof to SRE <i class="fragment fas fa-heart" style="font-size:100px;color: rgb(211, 0, 35);"></i>(we need a broker!)</span>
+                <span
+                  >Tons of lof to SRE
+                  <i
+                    class="fragment fas fa-heart"
+                    style="font-size: 100px; color: rgb(211, 0, 35)"
+                  ></i
+                  >(we need a broker!)</span
+                >
               </li>
               <li class="fragment">
                 <span>Decide our workflow</span>
@@ -926,27 +2277,73 @@
                 <span>Start writting Pacts like there is no tumorrou</span>
               </li>
             </ul>
-            <img class="fragment" src="assets/netflix-schema.jpeg" style="border-radius:50%;" width="275px" height="275px"/>
+            <img
+              class="fragment"
+              src="assets/netflix-schema.jpeg"
+              style="border-radius: 50%"
+              width="275px"
+              height="275px"
+            />
           </section>
         </section>
         <section data-auto-animate>
           <section data-auto-animate>
             <div class="row">
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <img data-id="pact-logo-image" data-src="assets/pact-logo-icon_white.png" width="20px" style="margin:5px 0;"/>
-                <h1 data-id="pact-logo-text" style="font-size:15px">PACT 101</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <img
+                  data-id="pact-logo-image"
+                  data-src="assets/pact-logo-icon_white.png"
+                  width="20px"
+                  style="margin: 5px 0"
+                />
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  PACT 101
+                </h1>
               </div>
-              <div class="row" data-id="pact-logo" style="width:100px; justify-content: space-evenly; border:1px solid white; border-radius: 10px; box-shadow: 0px 0px 2px 0px #787878;  height:30px;">
-                <h1 data-id="pact-logo-text" style="font-size:15px">Questions</h1>
+              <div
+                class="row"
+                data-id="pact-logo"
+                style="
+                  width: 100px;
+                  justify-content: space-evenly;
+                  border: 1px solid white;
+                  border-radius: 10px;
+                  box-shadow: 0px 0px 2px 0px #787878;
+                  height: 30px;
+                "
+              >
+                <h1 data-id="pact-logo-text" style="font-size: 15px">
+                  Questions
+                </h1>
               </div>
             </div>
-            <h3 style="display:flex; align-items: center; justify-content: center; height: 80%; font-size:150px" class="">Cuestions?</h3>
+            <h3
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 80%;
+                font-size: 150px;
+              "
+              class=""
+            >
+              Cuestions?
+            </h3>
           </section>
         </section>
       </div>
     </div>
-
-
 
     <script src="dist/reveal.js"></script>
     <script src="plugin/notes/notes.js"></script>
@@ -958,15 +2355,20 @@
       // - https://revealjs.com/initialization/
       // - https://revealjs.com/config/
       Reveal.initialize({
-        center:false,
+        center: false,
         hash: true,
         // Learn about plugins: https://revealjs.com/plugins/
         dependencies: [
-          { src: 'https://d3js.org/d3.v4.min.js' },
-          { src: 'plugin/d3js/d3js.js' },
-          { src: 'plugin/animated/plugin.js', async: true }
+          { src: "https://d3js.org/d3.v4.min.js" },
+          { src: "plugin/d3js/d3js.js" },
+          { src: "plugin/animated/plugin.js", async: true },
         ],
-        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealChalkboard ],
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealNotes,
+          RevealChalkboard,
+        ],
       });
     </script>
   </body>
